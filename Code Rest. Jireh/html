@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iglesia Ebenezer Honduras</title>
+    <meta name="description" content="Iglesia Ebenezer Honduras - Una comunidad de fe hispana en Georgetown, TX">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" onclick="showPage('home')">
+                <span>✝</span>
+                <span>Iglesia Ebenezer Honduras</span>
+            </div>
+            <ul class="nav-links">
+                <li><a onclick="showPage('home')" class="active">Inicio</a></li>
+                <li><a onclick="showPage('visit')">Planea tu Visita</a></li>
+                <li><a onclick="showPage('ministries')">Ministerios</a></li>
+                <li><a onclick="showPage('events')">Eventos</a></li>
+                <li><a onclick="showPage('contact')">Contacto</a></li>
+            </ul>
+            <button class="lang-toggle" onclick="alert('Función de idioma en desarrollo')">EN</button>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bienvenidos a Ebenezer</h1>
+                <p>Una familia de fe donde encontrarás amor, esperanza y propósito en Cristo</p>
+                <div class="cta-buttons">
+                    <a onclick="showPage('visit')" class="btn btn-primary">Planea tu Visita</a>
+                    <a onclick="showPage('events')" class="btn btn-secondary">Próximos Eventos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Times -->
+        <div class="service-times">
+            <h3>Horarios de Servicio</h3>
+            <div class="times">
+                <div class="time-item">
+                    <strong>Domingos</strong>
+                    <span>8:15 AM | 10:00 AM | 11:45 AM</span>
+                </div>
+                <div class="time-item">
+                    <strong>Miércoles</strong>
+                    <span>7:00 PM - Estudio Bíblico</span>
+                </div>
+                <div class="time-item">
+                    <strong>Viernes</strong>
+                    <span>7:30 PM - Noche de Jóvenes</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section class="section">
+            <div class="about-content">
+                <div class="about-image">
+                    <span>✝</span>
+                </div>
+                <div class="about-text">
+                    <h2>Nuestra Historia</h2>
+                    <p>La Iglesia Ebenezer Honduras nació del deseo de crear una comunidad donde las familias hispanas puedan adorar a Dios en su idioma y cultura, mientras crecen en su fe y sirven a su comunidad.</p>
+                    <p>Tenemos tres servicios donde nos reunimos para adorar, escuchar un mensaje basado en la Biblia y conectar con personas en cada etapa de la vida.</p>
+                    <p><strong>Nuestra Misión:</strong> Edificar cristianos fuertes a través de la iglesia local que estén capacitados para cumplir su llamado.</p>
+                    <a onclick="showPage('visit')" class="btn btn-primary" style="margin-top: 1rem;">Visítanos</a>
+                </div>
+            </div>
+
+            <!-- Location Info Box -->
+            <div class="info-box" style="margin-top: 4rem;">
+                <h3>📍 Nuestra Ubicación</h3>
+                <p>Fácil de encontrar con amplio estacionamiento, justo al lado de la I-35 en la salida de Westinghouse Rd</p>
+                <div class="info-items">
+                    <div class="info-item">
+                        <strong>Dirección</strong>
+                        <span>601 Westinghouse Rd<br>Georgetown, TX 78626</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Estacionamiento</strong>
+                        <span>Amplio y Gratuito</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Accesibilidad</strong>
+                        <span>Para Todos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Section -->
+        <section class="section section-alt">
+            <h2 class="section-title">Nuestro Liderazgo</h2>
+            <p class="section-subtitle">Pastores dedicados a servir y guiar a nuestra congregación</p>
+            
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <span>👨‍💼</span>
+                    </div>
+                    <div class="leader-info">
+                        <h3>Pastor [Nombre]</h3>
+                        <div class="leader-role">Pastor Principal</div>
+                        <p>Con años de experiencia en el ministerio, el Pastor y su esposa fundaron Ebenezer con la visión de edificar una comunidad de fe fuerte y vibrante.</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <span>👩‍💼</span>
+                    </div>
+                    <div class="leader-info">
+                        <h3>Pastora [Nombre]</h3>
+                        <div class="leader-role">Pastora Asociada</div>
+                        <p>Lidera los ministerios de mujeres y familias, apasionada por ayudar a cada persona a descubrir su propósito en Cristo.</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <span>👨‍🏫</span>
+                    </div>
+                    <div class="leader-info">
+                        <h3>Pastor [Nombre]</h3>
+                        <div class="leader-role">Pastor de Jóvenes</div>
+                        <p>Lidera nuestros ministerios de próxima generación: niños, estudiantes y jóvenes adultos con pasión y dedicación.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media Banner -->
+        <section class="section section-alt">
+            <div class="social-banner">
+                <div class="social-banner-content">
+                    <h3>Síguenos en Redes Sociales</h3>
+                    <p>Mantente conectado con todo lo que sucede en Ebenezer siguiéndonos en nuestras redes sociales.</p>
+                </div>
+                <div class="social-banner-phone">
+                    <div style="background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); width: 180px; height: 180px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">📱</div>
+                </div>
+                <div class="social-banner-icons">
+                    <a href="#" class="social-banner-icon instagram">📷</a>
+                    <a href="#" class="social-banner-icon facebook">f</a>
+                    <a href="#" class="social-banner-icon twitter">𝕏</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- VISIT PAGE -->
+    <div id="visit" class="page">
+        <section class="hero small">
+            <div class="hero-content">
+                <h1>Planea tu Visita</h1>
+                <p>Te damos la bienvenida a nuestra familia de fe</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Qué Esperar</h2>
+            <p class="section-subtitle">Hacemos que tu primera visita sea fácil y acogedora</p>
+
+            <div class="visit-grid">
+                <div class="visit-section">
+                    <h3>📍 Dirección & Estacionamiento</h3>
+                    <p><strong>601 Westinghouse Rd<br>Georgetown, TX 78626</strong></p>
+                    <ul>
+                        <li>Sigue las señales de los asistentes de estacionamiento</li>
+                        <li>Visitantes por primera vez pueden usar las luces intermitentes</li>
+                        <li>Acceso a estacionamiento VIP cerca del edificio</li>
+                        <li>Estacionamiento amplio y gratuito</li>
+                    </ul>
+                </div>
+
+                <div class="visit-section">
+                    <h3>⏰ Horarios de Servicio</h3>
+                    <p><strong>Domingos</strong></p>
+                    <ul>
+                        <li>8:15 AM - Servicio Tradicional</li>
+                        <li>10:00 AM - Servicio Principal</li>
+                        <li>11:45 AM - Servicio Contemporáneo</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Entre Semana</strong></p>
+                    <ul>
+                        <li>Miércoles 7:00 PM - Estudio Bíblico</li>
+                        <li>Viernes 7:30 PM - Noche de Jóvenes</li>
+                    </ul>
+                </div>
+
+                <div class="visit-section">
+                    <h3>👶 Ministerio de Niños</h3>
+                    <p>Experiencias apropiadas para la edad disponibles durante cada servicio</p>
+                    <ul>
+                        <li>Bebés hasta 5to Grado</li>
+                        <li>Check-in y entrega en el área de Ministerio Infantil</li>
+                        <li>Ambiente seguro y divertido</li>
+                        <li>Maestros capacitados y verificados</li>
+                    </ul>
+                </div>
+
+                <div class="visit-section">
+                    <h3>🎸 Ministerio de Estudiantes</h3>
+                    <p>Para estudiantes de secundaria hasta universidad</p>
+                    <ul>
+                        <li>Oportunidades de servicio</li>
+                        <li>Eventos y actividades especiales</li>
+                        <li>Grupos pequeños durante la semana</li>
+                        <li>Conecta con el equipo WAVE</li>
+                    </ul>
+                </div>
+
+                <div class="visit-section">
+                    <h3>☕ Al Llegar</h3>
+                    <ul>
+                        <li>Nuestro equipo de bienvenida te saludará</li>
+                        <li>Café y refrigerios disponibles</li>
+                        <li>Voluntarios para responder preguntas</li>
+                        <li>Área de información en el vestíbulo</li>
+                        <li>Ambiente casual y acogedor</li>
+                    </ul>
+                </div>
+
+                <div class="visit-section">
+                    <h3>👔 Código de Vestimenta</h3>
+                    <p>Ven como te sientas cómodo</p>
+                    <ul>
+                        <li>No hay código de vestimenta formal</li>
+                        <li>Muchos vienen casual o semi-formal</li>
+                        <li>Lo importante es tu corazón, no tu ropa</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 3rem;">
+                <h3>¿Primera Vez?</h3>
+                <p>Nos encantaría conocerte. Visita nuestra mesa de información después del servicio para recibir un regalo de bienvenida.</p>
+                <div class="cta-buttons">
+                    <a onclick="showPage('contact')" class="btn btn-primary">Contáctanos</a>
+                    <a onclick="showPage('events')" class="btn btn-secondary">Ver Eventos</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- MINISTRIES PAGE -->
+    <div id="ministries" class="page">
+        <section class="hero small">
+            <div class="hero-content">
+                <h1>Nuestros Ministerios</h1>
+                <p>Encuentra tu lugar para crecer y servir</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="cards-grid">
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">👨‍👩‍👧‍👦</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Familias</h3>
+                        <p>Fortalecemos las familias a través de actividades, consejería y eventos que unen a padres e hijos en la fe.</p>
+                        <div class="event-category">Todas las Edades</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">🎸</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Jóvenes (WAVE)</h3>
+                        <p>Un espacio vibrante donde los jóvenes de secundaria y universidad pueden adorar, aprender y crecer juntos.</p>
+                        <div class="event-category">Secundaria - Universidad</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">👶</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Niños</h3>
+                        <p>Enseñamos a los niños sobre el amor de Jesús a través de lecciones bíblicas interactivas y divertidas.</p>
+                        <div class="event-category">Bebés - 5to Grado</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">🎵</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Alabanza</h3>
+                        <p>Guiamos a la congregación en adoración con música contemporánea y tradicional en español.</p>
+                        <div class="event-category">Músicos y Cantantes</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">👩‍💼</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Mujeres</h3>
+                        <p>Eventos, estudios bíblicos y retiros diseñados para mujeres de todas las edades.</p>
+                        <div class="event-category">Mujeres</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">👨‍💼</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Hombres</h3>
+                        <p>Desayunos mensuales, estudios bíblicos y eventos para hombres.</p>
+                        <div class="event-category">Hombres</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">🤝</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Servicio</h3>
+                        <p>Servimos a nuestra comunidad local a través de programas de ayuda y eventos de alcance.</p>
+                        <div class="event-category">Servicio Comunitario</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">📖</div>
+                    <div class="ministry-content">
+                        <h3>Grupos Pequeños</h3>
+                        <p>Grupos de estudio bíblico y comunión que se reúnen durante la semana en diferentes hogares.</p>
+                        <div class="event-category">Todas las Edades</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">🌍</div>
+                    <div class="ministry-content">
+                        <h3>Misiones</h3>
+                        <p>Viajes misioneros a Honduras y otros países, apoyo a misioneros globales.</p>
+                        <div class="event-category">Misiones Globales</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 3rem;">
+                <h3>¿Quieres Involucrarte?</h3>
+                <p>Únete a Connection Point, nuestra clase de membresía donde aprenderás sobre la iglesia.</p>
+                <a onclick="showPage('contact')" class="btn btn-primary">Más Información</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- EVENTS PAGE -->
+    <div id="events" class="page">
+        <section class="hero small">
+            <div class="hero-content">
+                <h1>Eventos</h1>
+                <p>Únete a nosotros en nuestras actividades especiales</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="events-filter">
+                <button class="filter-btn active" onclick="filterEvents('todos')">Todos</button>
+                <button class="filter-btn" onclick="filterEvents('familias')">Familias</button>
+                <button class="filter-btn" onclick="filterEvents('jovenes')">Jóvenes</button>
+                <button class="filter-btn" onclick="filterEvents('ninos')">Niños</button>
+                <button class="filter-btn" onclick="filterEvents('especiales')">Eventos Especiales</button>
+            </div>
+
+            <div class="cards-grid" id="events-container">
+                <!-- Events will be loaded by JavaScript -->
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <section class="hero small">
+            <div class="hero-content">
+                <h1>Contáctanos</h1>
+                <p>Nos encantaría saber de ti</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>601 Westinghouse Rd<br>Georgetown, TX 78626</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>(512) 555-0123</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@ebenezerhonduras.org</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div>
+                            <h4>Horario de Oficina</h4>
+                            <p>Lunes - Viernes: 9:00 AM - 5:00 PM<br>Sábado - Domingo: Cerrado</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div>
+                            <h4>Síguenos en Redes Sociales</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link">f</a>
+                                <a href="#" class="social-link">📷</a>
+                                <a href="#" class="social-link">▶</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo *</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Asunto *</label>
+                        <input type="text" id="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensaje *</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
+                </form>
+            </div>
+
+            <div class="info-box" style="margin-top: 3rem;">
+                <h3>¿Necesitas Oración?</h3>
+                <p>Nuestro equipo de oración está disponible para orar contigo.</p>
+                <button class="btn btn-secondary" onclick="alert('Formulario de oración próximamente')">Solicitar Oración</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Iglesia Ebenezer Honduras</h4>
+                    <p>Una comunidad de fe dedicada a compartir el amor de Cristo.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">▶</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <a onclick="showPage('home')">Inicio</a>
+                    <a onclick="showPage('visit')">Planea tu Visita</a>
+                    <a onclick="showPage('ministries')">Ministerios</a>
+                    <a onclick="showPage('events')">Eventos</a>
+                    <a onclick="showPage('contact')">Contacto</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Horarios de Servicio</h4>
+                    <p>Domingos:<br>8:15 AM | 10:00 AM | 11:45 AM</p>
+                    <p style="margin-top: 0.5rem;">Miércoles: 7:00 PM</p>
+                    <p>Viernes: 7:30 PM</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📍 601 Westinghouse Rd<br>Georgetown, TX 78626</p>
+                    <p style="margin-top: 0.5rem;">📞 (512) 555-0123</p>
+                    <p>✉️ info@ebenezerhonduras.org</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Iglesia Ebenezer Honduras. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
