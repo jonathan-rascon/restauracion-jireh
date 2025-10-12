@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iglesia Ebenezer Honduras</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .lang-toggle {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .lang-toggle:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Page Container */
+        .page {
+            display: none;
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 600px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero.small {
+            height: 350px;
+        }
+
+        .hero.small h1 {
+            font-size: 2.8rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Service Times */
+        .service-times {
+            background: var(--accent-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .service-times h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .times {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .time-item {
+            font-size: 1.1rem;
+        }
+
+        .time-item strong {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 1.2rem;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-alt {
+            background: var(--bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.8rem;
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .about-text h2 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Leadership Section */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .leader-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .leader-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .leader-info {
+            padding: 1.5rem;
+        }
+
+        .leader-info h3 {
+            margin-bottom: 0.3rem;
+            color: var(--text-dark);
+        }
+
+        .leader-role {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .leader-info p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .info-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-box p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-items {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-item strong {
+            display: block;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Visit Page Styles */
+        .visit-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .visit-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .visit-section p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .visit-section ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .visit-section ul li {
+            padding: 0.8rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .visit-section ul li:before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .visit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Events Calendar */
+        .events-filter {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            background: white;
+            color: var(--primary-color);
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .event-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .event-date {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .event-date .day {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .event-date .month {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .event-info h3 {
+            margin-bottom: 0.3rem;
+        }
+
+        .event-time {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .event-content {
+            padding: 1.5rem;
+        }
+
+        .event-content p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .event-category {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--bg-light);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Ministry Detail Page */
+        .ministry-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .ministry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .ministry-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .ministry-content {
+            padding: 2rem;
+        }
+
+        .ministry-content h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .ministry-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.8rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--accent-color);
+        }
+
+        /* Social Media Banner */
+        .social-banner {
+            background: linear-gradient(135deg, #5b6fd8 0%, #7c5cdb 100%);
+            border-radius: 25px;
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            margin: 4rem 0;
+            box-shadow: 0 10px 40px rgba(91, 111, 216, 0.3);
+        }
+
+        .social-banner-content {
+            flex: 1;
+            color: white;
+        }
+
+        .social-banner-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .social-banner-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .social-banner-phone {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 600"><rect width="300" height="600" rx="30" fill="%23000"/><rect x="10" y="10" width="280" height="580" rx="25" fill="%231a1a1a"/></svg>') center/contain no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-banner-icons {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .social-banner-icon {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-banner-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-banner-icon.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+
+        .social-banner-icon.facebook {
+            background: #1877f2;
+            color: white;
+        }
+
+        .social-banner-icon.twitter {
+            background: #000000;
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            color: #9ca3af;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero.small h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .times {
+                gap: 1.5rem;
+            }
+
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .info-items {
+                gap: 1.5rem;
+            }
+
+            .social-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
+            }
+
+            .social-banner-content h3 {
+                font-size: 2rem;
+            }
+
+            .social-banner-phone {
+                width: 200px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" onclick="showPage('home')">
+                <span>✝</span>
+                <span>Iglesia Ebenezer Honduras</span>
+            </div>
+            <ul class="nav-links">
+                <li><a onclick="showPage('home')" class="active">Inicio</a></li>
+                <li><a onclick="showPage('visit')">Planea tu Visita</a></li>
+                <li><a onclick="showPage('ministries')">Ministerios</a></li>
+                <li><a onclick="showPage('events')">Eventos</a></li>
+                <li><a onclick="showPage('contact')">Contacto</a></li>
+            </ul>
+            <button class="lang-toggle" onclick="alert('Función de idioma en desarrollo')">EN</button>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bienvenidos a Ebenezer</h1>
+                <p>Una familia de fe donde encontrarás amor, esperanza y propósito en Cristo</p>
+                <div class="cta-buttons">
+                    <a onclick="showPage('visit')" class="btn btn-primary">Planea tu Visita</a>
+                    <a onclick="showPage('events')" class="btn btn-secondary">Próximos Eventos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Times -->
+        <div class="service-times">
+            <h3>Horarios de Servicio</h3>
+            <div class="times">
+                <div class="time-item">
+                    <strong>Domingos</strong>
+                    <span>8:15 AM | 10:00 AM | 11:45 AM</span>
+                </div>
+                <div class="time-item">
+                    <strong>Miércoles</strong>
+                    <span>7:00 PM - Estudio Bíblico</span>
+                </div>
+                <div class="time-item">
+                    <strong>Viernes</strong>
+                    <span>7:30 PM - Noche de Jóvenes</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section class="section">
+            <div class="about-content">
+                <div class="about-image">
+                    <span>✝</span>
+                </div>
+                <div class="about-text">
+                    <h2>Nuestra Historia</h2>
+                    <p>La Iglesia Ebenezer Honduras nació del deseo de crear una comunidad donde las familias hispanas puedan adorar a Dios en su idioma y cultura, mientras crecen en su fe y sirven a su comunidad.</p>
+                    <p>Tenemos tres servicios donde nos reunimos para adorar, escuchar un mensaje basado en la Biblia y conectar con personas en cada etapa de la vida.</p>
+                    <p><strong>Nuestra Misión:</strong> Edificar cristianos fuertes a través de la iglesia local que estén capacitados para cumplir su llamado.</p>
+                    <a onclick="showPage('visit')" class="btn btn-primary" style="margin-top: 1rem;">Visítanos</a>
+                </div>
+            </div>
+
+            <!-- Location Info Box -->
+            <div class="info-box" style="margin-top: 4rem;">
+                <h3>📍 Nuestra Ubicación</h3>
+                <p>Fácil de encontrar con amplio estacionamiento, justo al lado de la I-35 en la salida de Westinghouse Rd</p>
+                <div class="info-items">
+                    <div class="info-item">
+                        <strong>Dirección</strong>
+                        <span>601 Westinghouse Rd<br>Georgetown, TX 78626</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Estacionamiento</strong>
+                        <span>Amplio y Gratuito</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Accesibilidad</strong>
+                        <span>Para Todos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Section -->
+        <section class="section section-alt">
+            <h2 class="section-title">Nuestro Liderazgo</h2>
+            <p class="section-subtitle">Pastores dedicados a servir y guiar a nuestra congregación</p>
+            
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <span>👨‍💼</span>
+                    </div>
+                    <div class="leader-info">
+                        <h3>Pastor [Nombre]</h3>
+                        <div class="leader-role">Pastor Principal</div>
+                        <p>Con años de experiencia en el ministerio, el Pastor y su esposa fundaron Ebenezer con la visión de edificar una comunidad de fe fuerte y vibrante.</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <span>👩‍💼</span>
+                    </div>
+                    <div class="leader-info">
+                        <h3>Pastora [Nombre]</h3>
+                        <div class="leader-role">Pastora Asociada</div>
+                        <p>Lidera los ministerios de mujeres y familias, apasionada por ayudar a cada persona a descubrir su propósito en Cristo.</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <span>👨‍🏫</span>
+                    </div>
+                    <div class="leader-info">
+                        <h3>Pastor [Nombre]</h3>
+                        <div class="leader-role">Pastor de Jóvenes</div>
+                        <p>Lidera nuestros ministerios de próxima generación: niños, estudiantes y jóvenes adultos con pasión y dedicación.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media Banner -->
+        <section class="section section-alt">
+            <div class="social-banner">
+                <div class="social-banner-content">
+                    <h3>Síguenos en Redes Sociales</h3>
+                    <p>Mantente conectado con todo lo que sucede en Ebenezer siguiéndonos en nuestras redes sociales.</p>
+                </div>
+                <div class="social-banner-phone">
+                    <div style="background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); width: 180px; height: 180px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">📱</div>
+                </div>
+                <div class="social-banner-icons">
+                    <a href="#" class="social-banner-icon instagram">📷</a>
+                    <a href="#" class="social-banner-icon facebook">f</a>
+                    <a href="#" class="social-banner-icon twitter">𝕏</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- VISIT PAGE -->
+    <div id="visit" class="page">
+        <section class="hero small">
+            <div class="hero-content">
+                <h1>Planea tu Visita</h1>
+                <p>Te damos la bienvenida a nuestra familia de fe</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Qué Esperar</h2>
+            <p class="section-subtitle">Hacemos que tu primera visita sea fácil y acogedora</p>
+
+            <div class="visit-grid">
+                <div class="visit-section">
+                    <h3>📍 Dirección & Estacionamiento</h3>
+                    <p><strong>601 Westinghouse Rd<br>Georgetown, TX 78626</strong></p>
+                    <ul>
+                        <li>Sigue las señales de los asistentes de estacionamiento</li>
+                        <li>Visitantes por primera vez pueden usar las luces intermitentes</li>
+                        <li>Acceso a estacionamiento VIP cerca del edificio</li>
+                        <li>Estacionamiento amplio y gratuito</li>
+                    </ul>
+                </div>
+
+                <div class="visit-section">
+                    <h3>⏰ Horarios de Servicio</h3>
+                    <p><strong>Domingos</strong></p>
+                    <ul>
+                        <li>8:15 AM - Servicio Tradicional</li>
+                        <li>10:00 AM - Servicio Principal</li>
+                        <li>11:45 AM - Servicio Contemporáneo</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Entre Semana</strong></p>
+                    <ul>
+                        <li>Miércoles 7:00 PM - Estudio Bíblico</li>
+                        <li>Viernes 7:30 PM - Noche de Jóvenes</li>
+                    </ul>
+                </div>
+
+                <div class="visit-section">
+                    <h3>👶 Ministerio de Niños</h3>
+                    <p>Experiencias apropiadas para la edad disponibles durante cada servicio</p>
+                    <ul>
+                        <li>Bebés hasta 5to Grado</li>
+                        <li>Check-in y entrega en el área de Ministerio Infantil</li>
+                        <li>Ambiente seguro y divertido</li>
+                        <li>Maestros capacitados y verificados</li>
+                    </ul>
+                </div>
+
+                <div class="visit-section">
+                    <h3>🎸 Ministerio de Estudiantes</h3>
+                    <p>Para estudiantes de secundaria hasta universidad</p>
+                    <ul>
+                        <li>Oportunidades de servicio</li>
+                        <li>Eventos y actividades especiales</li>
+                        <li>Grupos pequeños durante la semana</li>
+                        <li>Conecta con el equipo WAVE</li>
+                    </ul>
+                </div>
+
+                <div class="visit-section">
+                    <h3>☕ Al Llegar</h3>
+                    <ul>
+                        <li>Nuestro equipo de bienvenida te saludará</li>
+                        <li>Café y refrigerios disponibles</li>
+                        <li>Voluntarios para responder preguntas</li>
+                        <li>Área de información en el vestíbulo</li>
+                        <li>Ambiente casual y acogedor</li>
+                    </ul>
+                </div>
+
+                <div class="visit-section">
+                    <h3>👔 Código de Vestimenta</h3>
+                    <p>Ven como te sientas cómodo</p>
+                    <ul>
+                        <li>No hay código de vestimenta formal</li>
+                        <li>Muchos vienen casual o semi-formal</li>
+                        <li>Lo importante es tu corazón, no tu ropa</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 3rem;">
+                <h3>¿Primera Vez?</h3>
+                <p>Nos encantaría conocerte. Visita nuestra mesa de información después del servicio para recibir un regalo de bienvenida.</p>
+                <div class="cta-buttons">
+                    <a onclick="showPage('contact')" class="btn btn-primary">Contáctanos</a>
+                    <a onclick="showPage('events')" class="btn btn-secondary">Ver Eventos</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- MINISTRIES PAGE -->
+    <div id="ministries" class="page">
+        <section class="hero small">
+            <div class="hero-content">
+                <h1>Nuestros Ministerios</h1>
+                <p>Encuentra tu lugar para crecer y servir</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="cards-grid">
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">👨‍👩‍👧‍👦</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Familias</h3>
+                        <p>Fortalecemos las familias a través de actividades, consejería y eventos que unen a padres e hijos en la fe. Ofrecemos clases de matrimonio, talleres de crianza y eventos familiares mensuales.</p>
+                        <div class="event-category">Todas las Edades</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">🎸</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Jóvenes (WAVE)</h3>
+                        <p>Un espacio vibrante donde los jóvenes de secundaria y universidad pueden adorar, aprender y crecer juntos. Reuniones semanales los viernes a las 7:30 PM con música, enseñanza y comunidad.</p>
+                        <div class="event-category">Secundaria - Universidad</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">👶</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Niños</h3>
+                        <p>Enseñamos a los niños sobre el amor de Jesús a través de lecciones bíblicas interactivas, juegos y actividades divertidas. Disponible durante todos los servicios dominicales.</p>
+                        <div class="event-category">Bebés - 5to Grado</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">🎵</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Alabanza</h3>
+                        <p>Guiamos a la congregación en adoración con música contemporánea y tradicional en español. Únete a nuestro equipo de alabanza, coro o banda de adoración.</p>
+                        <div class="event-category">Músicos y Cantantes</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">👩‍💼</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Mujeres</h3>
+                        <p>Eventos, estudios bíblicos y retiros diseñados para mujeres de todas las edades. Construye amistades profundas mientras creces en tu fe.</p>
+                        <div class="event-category">Mujeres</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">👨‍💼</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Hombres</h3>
+                        <p>Desayunos mensuales, estudios bíblicos y eventos para hombres que desean crecer como líderes espirituales en sus hogares y comunidades.</p>
+                        <div class="event-category">Hombres</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">🤝</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Servicio</h3>
+                        <p>Servimos a nuestra comunidad local a través de programas de ayuda, bancos de alimentos, eventos de alcance y proyectos de servicio comunitario.</p>
+                        <div class="event-category">Servicio Comunitario</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">📖</div>
+                    <div class="ministry-content">
+                        <h3>Grupos Pequeños</h3>
+                        <p>Grupos de estudio bíblico y comunión que se reúnen durante la semana en diferentes hogares. La mejor manera de conectar profundamente con otros creyentes.</p>
+                        <div class="event-category">Todas las Edades</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="alert('Más información próximamente')">
+                    <div class="ministry-image">🌍</div>
+                    <div class="ministry-content">
+                        <h3>Misiones</h3>
+                        <p>Viajes misioneros a Honduras y otros países, apoyo a misioneros globales y oportunidades para hacer una diferencia en el mundo.</p>
+                        <div class="event-category">Misiones Globales</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 3rem;">
+                <h3>¿Quieres Involucrarte?</h3>
+                <p>Únete a Connection Point, nuestra clase de membresía donde aprenderás sobre la iglesia y descubrirás cómo puedes servir.</p>
+                <a onclick="showPage('contact')" class="btn btn-primary">Más Información</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- EVENTS PAGE -->
+    <div id="events" class="page">
+        <section class="hero small">
+            <div class="hero-content">
+                <h1>Eventos</h1>
+                <p>Únete a nosotros en nuestras actividades especiales</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="events-filter">
+                <button class="filter-btn active" onclick="filterEvents('todos')">Todos</button>
+                <button class="filter-btn" onclick="filterEvents('familias')">Familias</button>
+                <button class="filter-btn" onclick="filterEvents('jovenes')">Jóvenes</button>
+                <button class="filter-btn" onclick="filterEvents('ninos')">Niños</button>
+                <button class="filter-btn" onclick="filterEvents('especiales')">Eventos Especiales</button>
+            </div>
+
+            <div class="cards-grid">
+                <div class="event-card" data-category="especiales">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <span class="day">15</span>
+                            <span class="month">Oct</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Noche de Alabanza</h3>
+                            <div class="event-time">⏰ 7:00 PM - 9:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <p>Una noche especial de adoración y oración. Ven a experimentar la presencia de Dios con nosotros. Habrá música en vivo, testimonios y tiempo de oración.</p>
+                        <span class="event-category">Evento Especial</span>
+                    </div>
+                </div>
+
+                <div class="event-card" data-category="familias">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <span class="day">20</span>
+                            <span class="month">Oct</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Picnic Familiar</h3>
+                            <div class="event-time">⏰ 12:00 PM - 4:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <p>Día de convivencia familiar al aire libre con juegos, comida y compañerismo. Trae tu familia para un día lleno de diversión y comunidad.</p>
+                        <span class="event-category">Familias</span>
+                    </div>
+                </div>
+
+                <div class="event-card" data-category="jovenes">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <span class="day">27</span>
+                            <span class="month">Oct</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Conferencia de Jóvenes</h3>
+                            <div class="event-time">⏰ 6:00 PM - 9:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <p>Conferencia especial para jóvenes con invitado especial. Música, enseñanza poderosa y tiempo de comunidad. No te lo pierdas!</p>
+                        <span class="event-category">Jóvenes</span>
+                    </div>
+                </div>
+
+                <div class="event-card" data-category="ninos">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <span class="day">31</span>
+                            <span class="month">Oct</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Noche de Cosecha para Niños</h3>
+                            <div class="event-time">⏰ 5:00 PM - 8:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <p>Evento alternativo de Halloween con juegos, dulces, inflables y diversión para toda la familia en un ambiente seguro y cristiano.</p>
+                        <span class="event-category">Niños</span>
+                    </div>
+                </div>
+
+                <div class="event-card" data-category="especiales">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <span class="day">03</span>
+                            <span class="month">Nov</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Domingo de Bautismos</h3>
+                            <div class="event-time">⏰ Durante todos los servicios</div>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <p>Celebración de bautismos. Si estás interesado en bautizarte, contáctanos para más información sobre las clases de preparación.</p>
+                        <span class="event-category">Evento Especial</span>
+                    </div>
+                </div>
+
+                <div class="event-card" data-category="familias">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <span class="day">10</span>
+                            <span class="month">Nov</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Taller de Matrimonios</h3>
+                            <div class="event-time">⏰ 9:00 AM - 1:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <p>Taller intensivo para fortalecer tu matrimonio. Incluye desayuno, enseñanza y actividades en pareja. Registro requerido.</p>
+                        <span class="event-category">Familias</span>
+                    </div>
+                </div>
+
+                <div class="event-card" data-category="jovenes">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <span class="day">17</span>
+                            <span class="month">Nov</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Viernes de Jóvenes</h3>
+                            <div class="event-time">⏰ 7:30 PM - 9:30 PM</div>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <p>Reunión semanal de jóvenes con música, juegos, enseñanza bíblica y pizza. Un lugar donde los jóvenes pueden ser ellos mismos.</p>
+                        <span class="event-category">Jóvenes</span>
+                    </div>
+                </div>
+
+                <div class="event-card" data-category="especiales">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <span class="day">24</span>
+                            <span class="month">Nov</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Servicio de Acción de Gracias</h3>
+                            <div class="event-time">⏰ 10:00 AM</div>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <p>Servicio especial de Acción de Gracias. Únete a nosotros para dar gracias a Dios por sus bendiciones. Solo un servicio este domingo.</p>
+                        <span class="event-category">Evento Especial</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <section class="hero small">
+            <div class="hero-content">
+                <h1>Contáctanos</h1>
+                <p>Nos encantaría saber de ti</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>601 Westinghouse Rd<br>Georgetown, TX 78626</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>(512) 555-0123</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@ebenezerhonduras.org</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div>
+                            <h4>Horario de Oficina</h4>
+                            <p>Lunes - Viernes: 9:00 AM - 5:00 PM<br>Sábado - Domingo: Cerrado</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div>
+                            <h4>Síguenos en Redes Sociales</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link">f</a>
+                                <a href="#" class="social-link">📷</a>
+                                <a href="#" class="social-link">▶</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Gracias por tu mensaje. Te contactaremos pronto.');">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo *</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Asunto *</label>
+                        <input type="text" id="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensaje *</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
+                </form>
+            </div>
+
+            <div class="info-box" style="margin-top: 3rem;">
+                <h3>¿Necesitas Oración?</h3>
+                <p>Nuestro equipo de oración está disponible para orar contigo. Comparte tu petición y estaremos orando por ti.</p>
+                <button class="btn btn-secondary" onclick="alert('Formulario de oración próximamente')">Solicitar Oración</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Iglesia Ebenezer Honduras</h4>
+                    <p>Una comunidad de fe dedicada a compartir el amor de Cristo con nuestra comunidad hispana.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">▶</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <a onclick="showPage('home')">Inicio</a>
+                    <a onclick="showPage('visit')">Planea tu Visita</a>
+                    <a onclick="showPage('ministries')">Ministerios</a>
+                    <a onclick="showPage('events')">Eventos</a>
+                    <a onclick="showPage('contact')">Contacto</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Horarios de Servicio</h4>
+                    <p>Domingos:<br>8:15 AM | 10:00 AM | 11:45 AM</p>
+                    <p style="margin-top: 0.5rem;">Miércoles: 7:00 PM</p>
+                    <p>Viernes: 7:30 PM</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📍 601 Westinghouse Rd<br>Georgetown, TX 78626</p>
+                    <p style="margin-top: 0.5rem;">📞 (512) 555-0123</p>
+                    <p>✉️ info@ebenezerhonduras.org</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Iglesia Ebenezer Honduras. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update nav active state
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function filterEvents(category) {
+            const events = document.querySelectorAll('.event-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update button states
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter events
+            events.forEach(eventCard => {
+                if (category === 'todos') {
+                    eventCard.style.display = 'block';
+                } else {
+                    if (eventCard.dataset.category === category) {
+                        eventCard.style.display = 'block';
+                    } else {
+                        eventCard.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
