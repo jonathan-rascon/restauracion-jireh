@@ -10,21 +10,49 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="nav-container">
-            <div class="logo" onclick="showPage('home')">
-                <span>✝</span>
-                <span>Iglesia Restauración Jireh</span>
-            </div>
-            <ul class="nav-links">
-                <li><a onclick="showPage('home')" class="active">Inicio</a></li>
-                <li><a onclick="showPage('visit')">Planea tu Visita</a></li>
-                <li><a onclick="showPage('ministries')">Ministerios</a></li>
-                <li><a onclick="showPage('events')">Eventos</a></li>
-                <li><a onclick="showPage('contact')">Contacto</a></li>
-            </ul>
-            <button class="lang-toggle" onclick="alert('Función de idioma en desarrollo')">EN</button>
+    <div class="nav-container">
+        <div class="logo" onclick="showPage('home')">
+            <span>✝</span>
+            <span>Iglesia Restauración Jireh</span>
         </div>
-    </nav>
+        
+        <!-- Desktop Menu -->
+        <ul class="nav-links">
+            <li><a onclick="showPage('home')" class="active">Inicio</a></li>
+            <li><a onclick="showPage('visit')">Planea tu Visita</a></li>
+            <li><a onclick="showPage('ministries')">Ministerios</a></li>
+            <li><a onclick="showPage('events')">Eventos</a></li>
+            <li><a onclick="showPage('contact')">Contacto</a></li>
+        </ul>
+        
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <button class="lang-toggle" onclick="alert('Función de idioma en desarrollo')">EN</button>
+    </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+        <div class="logo">
+            <span>✝</span>
+            <span>Iglesia Restauración Jireh</span>
+        </div>
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">✕</button>
+    </div>
+    <ul class="mobile-menu-links">
+        <li><a onclick="showPage('home'); toggleMobileMenu();">Inicio</a></li>
+        <li><a onclick="showPage('visit'); toggleMobileMenu();">Planea tu Visita</a></li>
+        <li><a onclick="showPage('ministries'); toggleMobileMenu();">Ministerios</a></li>
+        <li><a onclick="showPage('events'); toggleMobileMenu();">Eventos</a></li>
+        <li><a onclick="showPage('contact'); toggleMobileMenu();">Contacto</a></li>
+    </ul>
+</div>
 
     <!-- HOME PAGE -->
     <div id="home" class="page active">
