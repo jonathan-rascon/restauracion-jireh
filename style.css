@@ -963,6 +963,11 @@ footer {
 
 /* Responsive - Mobile Optimization */
 @media (max-width: 768px) {
+    /* Remove home page margin */
+    #home {
+        margin-top: 0 !important;
+    }
+    
     /* Hide desktop navigation */
     .nav-links {
         display: none;
@@ -975,21 +980,28 @@ footer {
 
     /* Full screen video on mobile */
     .hero-video {
-        height: 100vh; /* Full screen height */
-        margin-top: -80px; /* Compensate for nav */
+        height: 100vh !important;
+        position: relative;
+        margin-top: 0;
     }
 
     .video-background iframe {
-        width: 100vw;
-        height: 100vh;
-        min-width: 100vw;
-        min-height: 100vh;
+        width: 100vw !important;
+        height: 100vh !important;
+        min-width: 100vw !important;
+        min-height: 100vh !important;
+    }
+    
+    /* Push service times below video */
+    #home .service-times {
+        margin-top: 0;
     }
 
     /* Make hero content more readable on mobile */
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
         padding: 0 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
     .hero.small h1 {
@@ -997,8 +1009,9 @@ footer {
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 1.1rem;
         padding: 0 1rem;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
 
     /* Stack buttons vertically on mobile */
@@ -1010,7 +1023,8 @@ footer {
 
     .btn {
         width: 100%;
-        padding: 1rem;
+        padding: 1.2rem;
+        font-size: 1.1rem;
     }
 
     /* Service times mobile */
