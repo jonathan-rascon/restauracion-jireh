@@ -959,62 +959,232 @@ footer {
     z-index: 2;
 }
 
-/* Responsive */
+/* REPLACE the existing @media (max-width: 768px) section at the bottom of your style.css with this: */
+
+/* Responsive - Mobile Optimization */
 @media (max-width: 768px) {
+    /* Hide desktop navigation */
     .nav-links {
         display: none;
     }
 
+    /* Adjust logo size */
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    /* Full screen video on mobile */
+    .hero-video {
+        height: 100vh; /* Full screen height */
+        margin-top: -80px; /* Compensate for nav */
+    }
+
+    .video-background iframe {
+        width: 100vw;
+        height: 100vh;
+        min-width: 100vw;
+        min-height: 100vh;
+    }
+
+    /* Make hero content more readable on mobile */
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        padding: 0 1rem;
     }
 
     .hero.small h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .hero p {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        padding: 0 1rem;
     }
 
+    /* Stack buttons vertically on mobile */
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 2rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    /* Service times mobile */
     .times {
+        flex-direction: column;
         gap: 1.5rem;
     }
 
+    .time-item {
+        padding: 1rem;
+    }
+
+    /* Single column layouts */
     .about-content,
     .contact-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-image {
+        height: 300px;
+    }
+
+    /* Adjust section padding */
+    .section {
+        padding: 3rem 1rem;
     }
 
     .section-title {
         font-size: 2rem;
     }
 
-    .info-items {
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Cards grid mobile */
+    .cards-grid {
+        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
+    /* Info box mobile */
+    .info-items {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .info-box {
+        padding: 2rem 1rem;
+    }
+
+    /* Social banner mobile */
     .social-banner {
         flex-direction: column;
         text-align: center;
-        padding: 2rem;
+        padding: 2rem 1rem;
     }
 
     .social-banner-content h3 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .social-banner-content p {
+        font-size: 1rem;
     }
 
     .social-banner-phone {
-        width: 200px;
+        width: 150px;
         height: 150px;
     }
-    
-    .video-background iframe {
-        height: 100vh;
-        width: 177.78vh;
+
+    .social-banner-icons {
+        justify-content: center;
     }
-    
+
+    .social-banner-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+
+    /* Leadership grid mobile */
+    .leadership-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .leader-image {
+        height: 250px;
+    }
+
+    /* Visit sections mobile */
+    .visit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .visit-section {
+        padding: 1.5rem;
+    }
+
+    /* Ministry cards mobile */
+    .ministry-image {
+        height: 150px;
+        font-size: 3rem;
+    }
+
+    /* Events filter mobile */
+    .events-filter {
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Footer mobile */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* Contact form mobile */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Make text more readable on smaller screens */
+    body {
+        font-size: 16px;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .logo span:last-child {
+        display: none; /* Hide church name on very small screens, keep only cross */
+    }
+
+    .social-banner-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Landscape mobile phones */
+@media (max-width: 768px) and (orientation: landscape) {
     .hero-video {
-        height: 500px;
+        height: 100vh;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
     }
 }
