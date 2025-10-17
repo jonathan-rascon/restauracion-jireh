@@ -917,7 +917,7 @@ footer {
     }
 }
 
-/* VIDEO BACKGROUND STYLES - CRITICAL! */
+/* GROUND STYLES - CRITICAL! */
 .hero-video {
     position: relative;
     overflow: hidden;
@@ -990,6 +990,7 @@ footer {
         height: 100vh !important;
         min-width: 100vw !important;
         min-height: 100vh !important;
+        transform: translate(-50%, -50%) scale(2.0);
     }
     
     /* Push service times below video */
