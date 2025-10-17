@@ -980,17 +980,19 @@ footer {
 
     /* Full screen video on mobile */
     .hero-video {
-        height: 100vh !important;
+        height: 65vh !important;
+        min-height: 400px;
+        min-height: 600px;
         position: relative;
         margin-top: 0;
     }
 
     .video-background iframe {
         width: 100vw !important;
-        height: 100vh !important;
+        height: 100% !important;
         min-width: 100vw !important;
-        min-height: 100vh !important;
-        transform: translate(-50%, -50%) scale(2.0);
+        min-height: 100% !important;
+        transform: translate(-50%, -50%) scale(1.7);
     }
     
     /* Push service times below video */
