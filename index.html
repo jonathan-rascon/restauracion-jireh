@@ -30,7 +30,7 @@ body {
     overflow-x: hidden;
 }
 
-/* IMPROVED NAVIGATION - Inspired by River Rock Bible */
+/* Navigation */
 nav {
     position: fixed;
     top: 0;
@@ -57,7 +57,6 @@ nav.scrolled {
     align-items: center;
 }
 
-/* CLEANER LOGO STYLE */
 .logo {
     display: flex;
     flex-direction: column;
@@ -123,23 +122,6 @@ nav.scrolled {
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--primary-color);
-}
-
-.lang-toggle {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.lang-toggle:hover {
-    background: var(--secondary-color);
-    transform: translateY(-1px);
 }
 
 /* Mobile Menu Button */
@@ -451,7 +433,7 @@ nav.scrolled {
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 4rem;
+    font-size: 6rem;
 }
 
 .about-text h2 {
@@ -556,6 +538,33 @@ nav.scrolled {
     margin-bottom: 0.5rem;
 }
 
+/* Icon styles to replace emojis */
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+}
+
+.ministry-icon {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
 /* Social Media Banner */
 .social-banner {
     background: linear-gradient(135deg, #5b6fd8 0%, #7c5cdb 100%);
@@ -587,15 +596,6 @@ nav.scrolled {
     line-height: 1.6;
 }
 
-.social-banner-phone {
-    position: relative;
-    width: 300px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .social-banner-icons {
     display: flex;
     gap: 1.5rem;
@@ -610,7 +610,8 @@ nav.scrolled {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
     transition: all 0.3s;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -697,15 +698,6 @@ nav.scrolled {
 .ministry-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.ministry-image {
-    height: 200px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
 }
 
 .ministry-content {
@@ -841,8 +833,8 @@ nav.scrolled {
 }
 
 .contact-icon {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background: var(--primary-color);
     border-radius: 50%;
     display: flex;
@@ -850,6 +842,8 @@ nav.scrolled {
     justify-content: center;
     color: white;
     flex-shrink: 0;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
 .contact-form {
@@ -944,6 +938,7 @@ footer {
     color: white;
     text-decoration: none;
     transition: background 0.3s;
+    font-weight: 600;
 }
 
 .social-link:hover {
@@ -990,21 +985,27 @@ footer {
         font-size: 0.65rem;
     }
 
+    /* Adjusted video height to show service times */
     .hero-video {
-        height: 100vh !important;
-        position: relative;
-        margin-top: 0;
+        height: 65vh !important;
+        min-height: 400px;
+        max-height: 600px;
     }
 
     .video-background iframe {
         width: 100vw !important;
-        height: 100vh !important;
+        height: 100% !important;
         min-width: 100vw !important;
-        min-height: 100vh !important;
+        min-height: 100% !important;
+    }
+
+    /* Service times immediately visible after video */
+    #home .service-times {
+        margin-top: 0;
     }
 
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
         padding: 0 1rem;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
@@ -1014,7 +1015,7 @@ footer {
     }
 
     .hero p {
-        font-size: 1.1rem;
+        font-size: 1rem;
         padding: 0 1rem;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
@@ -1082,11 +1083,6 @@ footer {
         font-size: 1.8rem;
     }
 
-    .social-banner-phone {
-        width: 150px;
-        height: 150px;
-    }
-
     .social-banner-icons {
         justify-content: center;
     }
@@ -1094,7 +1090,7 @@ footer {
     .social-banner-icon {
         width: 60px;
         height: 60px;
-        font-size: 2rem;
+        font-size: 1.2rem;
     }
 
     .leadership-grid {
@@ -1109,9 +1105,9 @@ footer {
         padding: 1.5rem;
     }
 
-    .ministry-image {
+    .ministry-icon {
         height: 150px;
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     .events-filter {
@@ -1135,11 +1131,22 @@ footer {
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
     }
 
     .logo-church {
         font-size: 1.1rem;
+    }
+}
+
+/* Landscape mobile phones */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-video {
+        height: 85vh;
     }
 }
     </style>
@@ -1252,7 +1259,7 @@ footer {
 
             <!-- Location Info Box -->
             <div class="info-box" style="margin-top: 4rem;">
-                <h3>📍 Nuestra Ubicación</h3>
+                <h3>Nuestra Ubicación</h3>
                 <p>Fácil de encontrar con amplio estacionamiento en Georgetown, Texas</p>
                 <div class="info-items">
                     <div class="info-item">
@@ -1279,7 +1286,7 @@ footer {
             <div class="leadership-grid">
                 <div class="leader-card">
                     <div class="leader-image">
-                        <span>👨‍💼</span>
+                        <span>P</span>
                     </div>
                     <div class="leader-info">
                         <h3>Pastor [Nombre]</h3>
@@ -1290,7 +1297,7 @@ footer {
                 
                 <div class="leader-card">
                     <div class="leader-image">
-                        <span>👩‍💼</span>
+                        <span>P</span>
                     </div>
                     <div class="leader-info">
                         <h3>Pastora [Nombre]</h3>
@@ -1301,7 +1308,7 @@ footer {
                 
                 <div class="leader-card">
                     <div class="leader-image">
-                        <span>👨‍🏫</span>
+                        <span>P</span>
                     </div>
                     <div class="leader-info">
                         <h3>Pastor [Nombre]</h3>
@@ -1319,13 +1326,10 @@ footer {
                     <h3>Síguenos en Redes Sociales</h3>
                     <p>Mantente conectado con todo lo que sucede en Restauración Jireh siguiéndonos en nuestras redes sociales.</p>
                 </div>
-                <div class="social-banner-phone">
-                    <div style="background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); width: 180px; height: 180px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">📱</div>
-                </div>
                 <div class="social-banner-icons">
-                    <a href="https://instagram.com/yourchurch" target="_blank" class="social-banner-icon instagram">📷</a>
-                    <a href="https://facebook.com/yourchurch" target="_blank" class="social-banner-icon facebook">f</a>
-                    <a href="https://twitter.com/yourchurch" target="_blank" class="social-banner-icon twitter">𝕏</a>
+                    <a href="https://instagram.com/yourchurch" target="_blank" class="social-banner-icon instagram">IG</a>
+                    <a href="https://facebook.com/yourchurch" target="_blank" class="social-banner-icon facebook">FB</a>
+                    <a href="https://twitter.com/yourchurch" target="_blank" class="social-banner-icon twitter">X</a>
                 </div>
             </div>
         </section>
@@ -1346,7 +1350,7 @@ footer {
 
             <div class="visit-grid">
                 <div class="visit-section">
-                    <h3>📍 Dirección & Estacionamiento</h3>
+                    <h3>Dirección & Estacionamiento</h3>
                     <p><strong>[Tu Dirección Completa]<br>Georgetown, TX 78626</strong></p>
                     <ul>
                         <li>Estacionamiento amplio disponible</li>
@@ -1357,7 +1361,7 @@ footer {
                 </div>
 
                 <div class="visit-section">
-                    <h3>⏰ Horarios de Servicio</h3>
+                    <h3>Horarios de Servicio</h3>
                     <p><strong>Domingos</strong></p>
                     <ul>
                         <li>9:00 AM - Primer Servicio</li>
@@ -1371,7 +1375,7 @@ footer {
                 </div>
 
                 <div class="visit-section">
-                    <h3>👶 Ministerio de Niños</h3>
+                    <h3>Ministerio de Niños</h3>
                     <p>Experiencias apropiadas para la edad disponibles durante cada servicio</p>
                     <ul>
                         <li>Bebés hasta 5to Grado</li>
@@ -1382,7 +1386,7 @@ footer {
                 </div>
 
                 <div class="visit-section">
-                    <h3>🎸 Ministerio de Estudiantes</h3>
+                    <h3>Ministerio de Estudiantes</h3>
                     <p>Para estudiantes de secundaria hasta universidad</p>
                     <ul>
                         <li>Oportunidades de servicio</li>
@@ -1393,7 +1397,7 @@ footer {
                 </div>
 
                 <div class="visit-section">
-                    <h3>☕ Al Llegar</h3>
+                    <h3>Al Llegar</h3>
                     <ul>
                         <li>Nuestro equipo de bienvenida te saludará</li>
                         <li>Café y refrigerios disponibles</li>
@@ -1404,7 +1408,7 @@ footer {
                 </div>
 
                 <div class="visit-section">
-                    <h3>👔 Código de Vestimenta</h3>
+                    <h3>Código de Vestimenta</h3>
                     <p>Ven como te sientas cómodo</p>
                     <ul>
                         <li>No hay código de vestimenta formal</li>
@@ -1437,7 +1441,7 @@ footer {
         <section class="section">
             <div class="cards-grid">
                 <div class="ministry-card" onclick="alert('Más información próximamente')">
-                    <div class="ministry-image">👨‍👩‍👧‍👦</div>
+                    <div class="ministry-icon">FAMILIA</div>
                     <div class="ministry-content">
                         <h3>Ministerio de Familias</h3>
                         <p>Fortalecemos las familias a través de actividades, consejería y eventos que unen a padres e hijos en la fe.</p>
@@ -1446,7 +1450,7 @@ footer {
                 </div>
 
                 <div class="ministry-card" onclick="alert('Más información próximamente')">
-                    <div class="ministry-image">🎸</div>
+                    <div class="ministry-icon">JÓVENES</div>
                     <div class="ministry-content">
                         <h3>Ministerio de Jóvenes</h3>
                         <p>Un espacio vibrante donde los jóvenes de secundaria y universidad pueden adorar, aprender y crecer juntos.</p>
@@ -1455,7 +1459,7 @@ footer {
                 </div>
 
                 <div class="ministry-card" onclick="alert('Más información próximamente')">
-                    <div class="ministry-image">👶</div>
+                    <div class="ministry-icon">NIÑOS</div>
                     <div class="ministry-content">
                         <h3>Ministerio de Niños</h3>
                         <p>Enseñamos a los niños sobre el amor de Jesús a través de lecciones bíblicas interactivas y divertidas.</p>
@@ -1464,7 +1468,7 @@ footer {
                 </div>
 
                 <div class="ministry-card" onclick="alert('Más información próximamente')">
-                    <div class="ministry-image">🎵</div>
+                    <div class="ministry-icon">MÚSICA</div>
                     <div class="ministry-content">
                         <h3>Ministerio de Alabanza</h3>
                         <p>Guiamos a la congregación en adoración con música contemporánea y tradicional en español.</p>
@@ -1473,7 +1477,7 @@ footer {
                 </div>
 
                 <div class="ministry-card" onclick="alert('Más información próximamente')">
-                    <div class="ministry-image">👩‍💼</div>
+                    <div class="ministry-icon">MUJERES</div>
                     <div class="ministry-content">
                         <h3>Ministerio de Mujeres</h3>
                         <p>Eventos, estudios bíblicos y retiros diseñados para mujeres de todas las edades.</p>
@@ -1482,7 +1486,7 @@ footer {
                 </div>
 
                 <div class="ministry-card" onclick="alert('Más información próximamente')">
-                    <div class="ministry-image">👨‍💼</div>
+                    <div class="ministry-icon">HOMBRES</div>
                     <div class="ministry-content">
                         <h3>Ministerio de Hombres</h3>
                         <p>Desayunos mensuales, estudios bíblicos y eventos para hombres.</p>
@@ -1491,7 +1495,7 @@ footer {
                 </div>
 
                 <div class="ministry-card" onclick="alert('Más información próximamente')">
-                    <div class="ministry-image">🤝</div>
+                    <div class="ministry-icon">SERVICIO</div>
                     <div class="ministry-content">
                         <h3>Ministerio de Servicio</h3>
                         <p>Servimos a nuestra comunidad local a través de programas de ayuda y eventos de alcance.</p>
@@ -1500,7 +1504,7 @@ footer {
                 </div>
 
                 <div class="ministry-card" onclick="alert('Más información próximamente')">
-                    <div class="ministry-image">📖</div>
+                    <div class="ministry-icon">GRUPOS</div>
                     <div class="ministry-content">
                         <h3>Grupos Pequeños</h3>
                         <p>Grupos de estudio bíblico y comunión que se reúnen durante la semana en diferentes hogares.</p>
@@ -1509,7 +1513,7 @@ footer {
                 </div>
 
                 <div class="ministry-card" onclick="alert('Más información próximamente')">
-                    <div class="ministry-image">🌍</div>
+                    <div class="ministry-icon">MISIONES</div>
                     <div class="ministry-content">
                         <h3>Misiones</h3>
                         <p>Viajes misioneros a Honduras y otros países, apoyo a misioneros globales.</p>
@@ -1579,7 +1583,7 @@ footer {
                     </div>
                     
                     <div class="contact-item">
-                        <div class="contact-icon">✉️</div>
+                        <div class="contact-icon">✉</div>
                         <div>
                             <h4>Email</h4>
                             <p>info@restauracionjireh.org</p>
@@ -1599,9 +1603,9 @@ footer {
                         <div>
                             <h4>Síguenos en Redes Sociales</h4>
                             <div class="social-links">
-                                <a href="https://facebook.com/yourchurch" target="_blank" class="social-link">f</a>
-                                <a href="https://instagram.com/yourchurch" target="_blank" class="social-link">📷</a>
-                                <a href="https://youtube.com/yourchurch" target="_blank" class="social-link">▶</a>
+                                <a href="https://facebook.com/yourchurch" target="_blank" class="social-link">FB</a>
+                                <a href="https://instagram.com/yourchurch" target="_blank" class="social-link">IG</a>
+                                <a href="https://youtube.com/yourchurch" target="_blank" class="social-link">YT</a>
                             </div>
                         </div>
                     </div>
@@ -1653,9 +1657,9 @@ footer {
                     <h4>Iglesia Restauración Jireh</h4>
                     <p>Una comunidad de fe dedicada a compartir el amor de Cristo con nuestra comunidad hispana.</p>
                     <div class="social-links">
-                        <a href="https://facebook.com/yourchurch" target="_blank" class="social-link">f</a>
-                        <a href="https://instagram.com/yourchurch" target="_blank" class="social-link">📷</a>
-                        <a href="https://youtube.com/yourchurch" target="_blank" class="social-link">▶</a>
+                        <a href="https://facebook.com/yourchurch" target="_blank" class="social-link">FB</a>
+                        <a href="https://instagram.com/yourchurch" target="_blank" class="social-link">IG</a>
+                        <a href="https://youtube.com/yourchurch" target="_blank" class="social-link">YT</a>
                     </div>
                 </div>
                 
@@ -1677,9 +1681,9 @@ footer {
                 
                 <div class="footer-section">
                     <h4>Contacto</h4>
-                    <p>📍 [Tu Dirección]<br>Georgetown, TX 78626</p>
-                    <p style="margin-top: 0.5rem;">📞 (512) XXX-XXXX</p>
-                    <p>✉️ info@restauracionjireh.org</p>
+                    <p>[Tu Dirección]<br>Georgetown, TX 78626</p>
+                    <p style="margin-top: 0.5rem;">(512) XXX-XXXX</p>
+                    <p>info@restauracionjireh.org</p>
                 </div>
             </div>
             
@@ -1719,18 +1723,66 @@ function toggleMobileMenu() {
 const eventsData = [
     {
         day: '15',
-        month: 'Oct',
+        month: 'Nov',
         title: 'Noche de Alabanza',
         time: '7:00 PM - 9:00 PM',
         description: 'Una noche especial de adoración y oración. Ven a experimentar la presencia de Dios con nosotros. Habrá música en vivo, testimonios y tiempo de oración.',
+        category: 'especiales'
+    },
+    {
+        day: '20',
+        month: 'Nov',
+        title: 'Picnic Familiar',
+        time: '12:00 PM - 4:00 PM',
+        description: 'Día de convivencia familiar al aire libre con juegos, comida y compañerismo. Trae tu familia para un día lleno de diversión y comunidad.',
+        category: 'familias'
+    },
+    {
+        day: '27',
+        month: 'Nov',
+        title: 'Conferencia de Jóvenes',
+        time: '6:00 PM - 9:00 PM',
+        description: 'Conferencia especial para jóvenes con invitado especial. Música, enseñanza poderosa y tiempo de comunidad. ¡No te lo pierdas!',
+        category: 'jovenes'
+    },
+    {
+        day: '01',
+        month: 'Dic',
+        title: 'Noche de Cosecha para Niños',
+        time: '5:00 PM - 8:00 PM',
+        description: 'Evento con juegos, dulces, inflables y diversión para toda la familia en un ambiente seguro y cristiano.',
+        category: 'ninos'
+    },
+    {
+        day: '08',
+        month: 'Dic',
+        title: 'Domingo de Bautismos',
+        time: 'Durante todos los servicios',
+        description: 'Celebración de bautismos. Si estás interesado en bautizarte, contáctanos para más información sobre las clases de preparación.',
+        category: 'especiales'
+    },
+    {
+        day: '15',
+        month: 'Dic',
+        title: 'Taller de Matrimonios',
+        time: '9:00 AM - 1:00 PM',
+        description: 'Taller intensivo para fortalecer tu matrimonio. Incluye desayuno, enseñanza y actividades en pareja. Registro requerido.',
+        category: 'familias'
+    },
+    {
+        day: '20',
+        month: 'Dic',
+        title: 'Viernes de Jóvenes',
+        time: '7:30 PM - 9:30 PM',
+        description: 'Reunión semanal de jóvenes con música, juegos, enseñanza bíblica y pizza. Un lugar donde los jóvenes pueden ser ellos mismos.',
         category: 'jovenes'
     },
     {
         day: '24',
-        month: 'Nov',
-        title: 'Servicio de Acción de Gracias',
-        time: '10:00 AM',
-        description: 'Servicio especial de Acción de Gracias. Únete a nosotros para dar gracias a Dios por sus bendiciones. Solo un servicio este domingo.',
+        month: 'Dic',
+        title: 'Servicio de Navidad',
+        time: '6:00 PM',
+        description: 'Servicio especial de Navidad. Únete a nosotros para celebrar el nacimiento de Jesús con música, adoración y reflexión.',
         category: 'especiales'
     }
 ];
@@ -1755,7 +1807,7 @@ function loadEvents() {
                 </div>
                 <div class="event-info">
                     <h3>${event.title}</h3>
-                    <div class="event-time">⏰ ${event.time}</div>
+                    <div class="event-time">${event.time}</div>
                 </div>
             </div>
             <div class="event-content">
@@ -1854,52 +1906,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
     </script>
 </body>
-</html>especiales'
-    },
-    {
-        day: '20',
-        month: 'Oct',
-        title: 'Picnic Familiar',
-        time: '12:00 PM - 4:00 PM',
-        description: 'Día de convivencia familiar al aire libre con juegos, comida y compañerismo. Trae tu familia para un día lleno de diversión y comunidad.',
-        category: 'familias'
-    },
-    {
-        day: '27',
-        month: 'Oct',
-        title: 'Conferencia de Jóvenes',
-        time: '6:00 PM - 9:00 PM',
-        description: 'Conferencia especial para jóvenes con invitado especial. Música, enseñanza poderosa y tiempo de comunidad. ¡No te lo pierdas!',
-        category: 'jovenes'
-    },
-    {
-        day: '31',
-        month: 'Oct',
-        title: 'Noche de Cosecha para Niños',
-        time: '5:00 PM - 8:00 PM',
-        description: 'Evento alternativo de Halloween con juegos, dulces, inflables y diversión para toda la familia en un ambiente seguro y cristiano.',
-        category: 'ninos'
-    },
-    {
-        day: '03',
-        month: 'Nov',
-        title: 'Domingo de Bautismos',
-        time: 'Durante todos los servicios',
-        description: 'Celebración de bautismos. Si estás interesado en bautizarte, contáctanos para más información sobre las clases de preparación.',
-        category: 'especiales'
-    },
-    {
-        day: '10',
-        month: 'Nov',
-        title: 'Taller de Matrimonios',
-        time: '9:00 AM - 1:00 PM',
-        description: 'Taller intensivo para fortalecer tu matrimonio. Incluye desayuno, enseñanza y actividades en pareja. Registro requerido.',
-        category: 'familias'
-    },
-    {
-        day: '17',
-        month: 'Nov',
-        title: 'Viernes de Jóvenes',
-        time: '7:30 PM - 9:30 PM',
-        description: 'Reunión semanal de jóvenes con música, juegos, enseñanza bíblica y pizza. Un lugar donde los jóvenes pueden ser ellos mismos.',
-        category: '
+</html>
