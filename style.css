@@ -1164,6 +1164,14 @@ footer {
     body {
         font-size: 16px;
     }
+    /* FIX PASTOR PHOTO CROP ON MOBILE */
+    .leader-image {
+        height: 350px;  /* Taller card on mobile */
+        background-size: contain !important;  /* Show full photo, no crop */
+        background-repeat: no-repeat;
+        background-position: center top;
+    }
+    
 }
 
 /* Extra small phones */
