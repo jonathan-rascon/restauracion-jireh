@@ -962,6 +962,7 @@ footer {
 /* REPLACE the existing @media (max-width: 768px) section at the bottom of your style.css with this: */
 
 /* Responsive - Mobile Optimization */
+/* Responsive - Mobile Optimization */
 @media (max-width: 768px) {
     /* Remove home page margin */
     #home {
@@ -982,7 +983,7 @@ footer {
     .hero-video {
         height: 65vh !important;
         min-height: 400px;
-        min-height: 600px;
+        max-height: 600px;  /* ← CHANGED: was "min-height: 600px" - typo! */
         position: relative;
         margin-top: 0;
     }
@@ -1115,8 +1116,12 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    /* FIX PASTOR PHOTO CROP ON MOBILE - SQUARE PHOTOS */
     .leader-image {
-        height: 250px;
+        height: 0 !important;
+        padding-bottom: 100% !important;
+        background-size: cover !important;
+        background-position: center top !important;
     }
 
     /* Visit sections mobile */
@@ -1129,7 +1134,7 @@ footer {
     }
 
     /* Ministry cards mobile */
-    .ministry-image {
+    .ministry-icon {
         height: 150px;
         font-size: 3rem;
     }
@@ -1163,53 +1168,5 @@ footer {
     /* Make text more readable on smaller screens */
     body {
         font-size: 16px;
-    }
-    /* FIX PASTOR PHOTO CROP ON MOBILE */
-        .leader-image {
-    height: 0;
-    padding-bottom: 100%;  /* Makes it square */
-    background-size: cover;
-    background-position: center top;
-    }
-    
-}
-
-/* Extra small phones */
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero p {
-        font-size: 0.95rem;
-    }
-
-    .logo {
-        font-size: 1rem;
-    }
-
-    .logo span:last-child {
-        display: none; /* Hide church name on very small screens, keep only cross */
-    }
-
-    .social-banner-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-    }
-}
-
-/* Landscape mobile phones */
-@media (max-width: 768px) and (orientation: landscape) {
-    .hero-video {
-        height: 100vh;
-    }
-
-    .hero h1 {
-        font-size: 1.5rem;
-    }
-
-    .hero p {
-        font-size: 0.9rem;
     }
 }
