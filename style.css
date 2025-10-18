@@ -1116,12 +1116,14 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* FIX PASTOR PHOTO CROP ON MOBILE - SQUARE PHOTOS */
+    /* FIX PASTOR PHOTO CROP ON MOBILE - SHOW FULL PHOTO */
     .leader-image {
-        height: 0 !important;
-        padding-bottom: 100% !important;
-        background-size: cover !important;
-        background-position: center top !important;
+        height: 400px !important;  /* Fixed height instead of square */
+        padding-bottom: 0 !important;  /* Remove the square padding */
+        background-size: contain !important;  /* CONTAIN = shows full photo */
+        background-repeat: no-repeat !important;
+        background-position: center center !important;
+        background-color: #f3f4f6 !important;  /* Light gray background */
     }
 
     /* Visit sections mobile */
