@@ -1165,12 +1165,12 @@ footer {
         font-size: 16px;
     }
     /* FIX PASTOR PHOTO CROP ON MOBILE */
-.leader-image {
+        .leader-image {
     height: 0;
     padding-bottom: 100%;  /* Makes it square */
     background-size: cover;
     background-position: center top;
-}
+    }
     
 }
 
