@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iglesia Restauración Jireh</title>
+    <meta name="description" content="Iglesia Restauración Jireh - Una comunidad de fe hispana en Austin, TX">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" onclick="showPage('home')">
+                <span class="logo-church">RESTAURACIÓN JIREH</span>
+                <span class="logo-subtitle">IGLESIA</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a onclick="showPage('home')" class="active">Inicio</a></li>
+                <li><a onclick="showPage('visit')">Visita</a></li>
+                <li><a onclick="showPage('ministries')">Ministerios</a></li>
+                <li><a onclick="showPage('events')">Eventos</a></li>
+                <li><a onclick="showPage('contact')">Contacto</a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Backdrop -->
+    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" onclick="toggleMobileMenu()"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <span class="logo-church">RESTAURACIÓN JIREH</span>
+                <span class="logo-subtitle">IGLESIA</span>
+            </div>
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">✕</button>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a onclick="showPage('home'); toggleMobileMenu();">Inicio</a></li>
+            <li><a onclick="showPage('visit'); toggleMobileMenu();">Visita</a></li>
+            <li><a onclick="showPage('ministries'); toggleMobileMenu();">Ministerios</a></li>
+            <li><a onclick="showPage('events'); toggleMobileMenu();">Eventos</a></li>
+            <li><a onclick="showPage('contact'); toggleMobileMenu();">Contacto</a></li>
+        </ul>
+    </div>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <!-- Hero with Video Background -->
+        <section class="hero hero-video">
+            <div class="video-background">
+                <iframe 
+                    src="https://www.youtube.com/embed/5Wpn2pavVX8?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&playlist=5Wpn2pavVX8"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-overlay"></div>
+
+            <div class="hero-content-bottom-left">
+                <h1>Bienvenidos a<br>Restauración Jireh</h1>
+                <p>Una familia de fe donde encontrarás<br>amor, esperanza y propósito en Cristo</p>
+            </div>
+        </section>
+
+        <!-- Service Times & Location -->
+        <section class="info-section-blue">
+            <div class="info-content-container">
+                <div class="info-two-column">
+                    <div class="info-photo-side">
+                        <div class="church-photo-large" id="churchSlideshow" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+                            
+                        </div>
+                    </div>
+
+                    <div class="info-text-side">
+                        <h2>Restauración Jireh</h2>
+                        <p class="info-intro-text">La Iglesia Restauración Jireh es una comunidad donde las familias hispanas pueden adorar a Dios en su idioma y cultura, mientras crecen en su fe y sirven a su comunidad. Tenemos servicios donde nos reunimos para adorar, escuchar un mensaje basado en la Biblia y conectar con personas en cada etapa de la vida.</p>
+                        
+                        <div class="info-divider"></div>
+                        
+                        <h3>Horarios de Servicio</h3>
+                        <div class="service-list-vertical">
+                            <div class="service-item-vertical">
+                                <strong>DOMINGOS</strong>
+                                <span>6:00 PM</span>
+                            </div>
+                            <div class="service-item-vertical">
+                                <strong>SÁBADOS</strong>
+                                <span>7:00 PM</span>
+                            </div>
+                            <div class="service-item-vertical">
+                                <strong>VIERNES</strong>
+                                <span>7:30 PM - Culto de Jóvenes</span>
+                            </div>
+                        </div>
+                        
+                        <div class="info-divider"></div>
+                        
+                        <h3>Dirección</h3>
+                        <p class="address-info">8000 Anderson Square #301<br>Austin, TX 78757</p>
+                        
+                        <button class="btn-get-directions" onclick="window.open('https://www.google.com/maps/search/?api=1&query=8000+Anderson+Square+301+Austin+TX+78757', '_blank')">Ver Mapa</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet Our Pastor -->
+        <section class="meet-pastor-section">
+            <div class="pastor-wrapper">
+                <div class="pastor-heading">
+                    <h2>Conoce a Nuestro Pastor Principal</h2>
+                    <h3>Pastor Alis Galeas</h3>
+                </div>
+                
+                <div class="pastor-columns">
+                    <div class="pastor-image-col">
+                        <div class="pastor-photo" style="background-image: url('photos/galeas.JPG'); background-color: var(--primary-color);"></div>
+                    </div>
+                    <div class="pastor-bio-col">
+                        <p>El Pastor Alis Galeas y su esposa fundaron la Iglesia Restauración Jireh con la visión de edificar cristianos fuertes a través de la iglesia local que estén capacitados para cumplir su llamado y experimentar la restauración que solo Dios puede dar.</p>
+                        <p>Con años de experiencia en el ministerio, el Pastor Alis ha dedicado su vida a servir a la comunidad hispana, guiando a familias hacia un encuentro genuino con Cristo. Su pasión es ver vidas transformadas por el poder del evangelio.</p>
+                        <p>Su mayor alegría es su familia y ver cómo Dios continúa trabajando en las vidas de cada miembro de la congregación.</p>
+                        <a href="https://www.facebook.com" target="_blank" class="btn btn-primary" style="margin-top: 1.5rem;">Síguelos en Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Events -->
+        <section class="upcoming-events-section">
+            <div class="events-wrapper">
+                <h2>Próximos Eventos</h2>
+                <div class="events-grid-home">
+                    <div class="event-card-large">
+                        <div class="event-image-large" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;"></div>
+                        <div class="event-details-large">
+                            <span class="event-date-badge">15 NOV</span>
+                            <h3>Noche de Alabanza</h3>
+                            <p>Una noche especial de adoración y oración. Ven a experimentar la presencia de Dios con nosotros.</p>
+                        </div>
+                    </div>
+
+                    <div class="event-card-large">
+                        <div class="event-image-large" style="background: linear-gradient(135deg, #f59e0b, #d97706); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;"></div>
+                        <div class="event-details-large">
+                            <span class="event-date-badge">20 NOV</span>
+                            <h3>Picnic Familiar</h3>
+                            <p>Día de convivencia familiar al aire libre con juegos, comida y compañerismo.</p>
+                        </div>
+                    </div>
+
+                    <div class="event-card-large">
+                        <div class="event-image-large" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;"></div>
+                        <div class="event-details-large">
+                            <span class="event-date-badge">27 NOV</span>
+                            <h3>Conferencia de Jóvenes</h3>
+                            <p>Conferencia especial para jóvenes con invitado especial. ¡No te lo pierdas!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="events-btn-center">
+                    <a onclick="showPage('events')" class="btn btn-primary" style="background: var(--primary-color); color: white;">Ver Todos los Eventos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Get Involved -->
+        <section class="get-involved-blue">
+            <h2>Involúcrate</h2>
+            <div class="involved-buttons-row">
+                <button class="btn-white-large" onclick="showPage('visit')">Visita</button>
+                <button class="btn-white-large" onclick="showPage('ministries')">Únete a un Ministerio</button>
+                <button class="btn-white-large" onclick="alert('Próximamente')">Únete a un Grupo Pequeño</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- VISIT PAGE -->
+    <div id="visit" class="page">
+        <section class="hero small">
+            <div class="hero-content">
+                <h1>Visita</h1>
+                <p>Te damos la bienvenida a nuestra familia de fe</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Qué Esperar</h2>
+            <p class="section-subtitle">Hacemos que tu primera visita sea fácil y acogedora</p>
+
+            <div class="visit-grid">
+                <div class="visit-section">
+                    <h3> Dirección & Estacionamiento</h3>
+                    <p>8000 Anderson Square #301, Austin, TX 78757</p>
+                    <ul>
+                        <li>Estacionamiento gratuito disponible</li>
+                        <li>Fácil acceso desde la autopista</li>
+                        <li>Señalización clara hacia la entrada</li>
+                    </ul>
+                </div>
+
+                <div class="visit-section">
+                    <h3> Horarios de Servicio</h3>
+                    <ul>
+                        <li>Domingos: 6:00 PM</li>
+                        <li>Sábados: 7:00 PM</li>
+                        <li>Viernes: 7:30 PM (Jóvenes)</li>
+                    </ul>
+                </div>
+
+                <div class="visit-section">
+                    <h3> Qué Esperar al Llegar</h3>
+                    <ul>
+                        <li>Café y refrigerios disponibles</li>
+                        <li>Voluntarios para responder preguntas</li>
+                        <li>Área de información en el vestíbulo</li>
+                        <li>Ambiente casual y acogedor</li>
+                    </ul>
+                </div>
+
+                <div class="visit-section">
+                    <h3> Código de Vestimenta</h3>
+                    <p>Ven como te sientas cómodo</p>
+                    <ul>
+                        <li>No hay código de vestimenta formal</li>
+                        <li>Muchos vienen del trabajo o semi-formal</li>
+                        <li>Lo importante es tu corazón, no tu ropa</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 3rem;">
+                <h3>¿Primera Vez?</h3>
+                <p>Queremos conocerte. Visita nuestra mesa de información después del servicio para recibir un regalo de bienvenida.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- MINISTRIES PAGE -->
+    <div id="ministries" class="page">
+        <section class="hero small">
+            <div class="hero-content">
+                <h1>Nuestros Ministerios</h1>
+                <p>Encuentra tu lugar para crecer y servir</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="cards-grid">
+                <div class="ministry-card" onclick="window.location.href='ministerio-jovenes.html'">
+                    <div class="ministry-icon" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">JÓVENES</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Jóvenes</h3>
+                        <p>Un espacio vibrante donde los jóvenes de secundaria y universidad pueden adorar, aprender y crecer juntos.</p>
+                        <div class="event-category">Secundaria - Universidad</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="window.location.href='ministerio-ninos.html'">
+                    <div class="ministry-icon" style="background: linear-gradient(135deg, #10b981, #059669);">NIÑOS</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Niños</h3>
+                        <p>Enseñamos a los niños sobre el amor de Jesús a través de lecciones bíblicas interactivas y divertidas.</p>
+                        <div class="event-category">Bebés - 5to Grado</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="window.location.href='ministerio-alabanza.html'">
+                    <div class="ministry-icon" style="background: linear-gradient(135deg, #ec4899, #be185d);">ALABANZA</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Alabanza</h3>
+                        <p>Guiamos a la congregación en adoración con música contemporánea y tradicional en español.</p>
+                        <div class="event-category">Músicos y Cantantes</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="window.location.href='ministerio-mujeres.html'">
+                    <div class="ministry-icon" style="background: linear-gradient(135deg, #f472b6, #db2777);">MUJERES</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Mujeres</h3>
+                        <p>Eventos, estudios bíblicos y retiros diseñados para mujeres de todas las edades.</p>
+                        <div class="event-category">Mujeres</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="window.location.href='ministerio-hombres.html'">
+                    <div class="ministry-icon" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">HOMBRES</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Hombres</h3>
+                        <p>Desayunos mensuales, estudios bíblicos y eventos para hombres.</p>
+                        <div class="event-category">Hombres</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="window.location.href='ministerio-servicio.html'">
+                    <div class="ministry-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">SERVICIO</div>
+                    <div class="ministry-content">
+                        <h3>Ministerio de Servicio</h3>
+                        <p>Servimos a nuestra comunidad local a través de programas de ayuda y eventos de alcance.</p>
+                        <div class="event-category">Servicio Comunitario</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="window.location.href='ministerio-grupos.html'">
+                    <div class="ministry-icon" style="background: linear-gradient(135deg, #14b8a6, #0d9488);">GRUPOS</div>
+                    <div class="ministry-content">
+                        <h3>Grupos Pequeños</h3>
+                        <p>Grupos de estudio bíblico y comunión que se reúnen durante la semana en diferentes hogares.</p>
+                        <div class="event-category">Todas las Edades</div>
+                    </div>
+                </div>
+
+                <div class="ministry-card" onclick="window.location.href='ministerio-misiones.html'">
+                    <div class="ministry-icon" style="background: linear-gradient(135deg, #6366f1, #4f46e5);">MISIONES</div>
+                    <div class="ministry-content">
+                        <h3>Misiones</h3>
+                        <p>Viajes misioneros a Honduras y otros países, apoyo a misioneros globales.</p>
+                        <div class="event-category">Misiones Globales</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 3rem;">
+                <h3>¿Quieres Involucrarte?</h3>
+                <p>Únete a nuestra clase de membresía donde aprenderás sobre la iglesia y descubrirás cómo puedes servir.</p>
+                <a onclick="showPage('contact')" class="btn btn-primary">Más Información</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- EVENTS PAGE -->
+    <div id="events" class="page">
+        <section class="hero small">
+            <div class="hero-content">
+                <h1>Eventos</h1>
+                <p>Únete a nosotros en nuestras actividades especiales</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="events-filter">
+                <button class="filter-btn active" onclick="filterEvents('todos', event)">Todos</button>
+                <button class="filter-btn" onclick="filterEvents('familias', event)">Familias</button>
+                <button class="filter-btn" onclick="filterEvents('jovenes', event)">Jóvenes</button>
+                <button class="filter-btn" onclick="filterEvents('ninos', event)">Niños</button>
+                <button class="filter-btn" onclick="filterEvents('especiales', event)">Eventos Especiales</button>
+            </div>
+
+            <div class="cards-grid" id="events-container">
+                <!-- Events will be loaded via JavaScript -->
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <section class="hero small">
+            <div class="hero-content">
+                <h1>Contáctanos</h1>
+                <p>Nos encantaría saber de ti</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"></div>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>8000 Anderson Square #301<br>Austin, TX 78757</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon"></div>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>(512) 709-4853</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon"></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@restauracionjireh.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon"></div>
+                        <div>
+                            <h4>Horario de Oficina</h4>
+                            <p>Lunes - Viernes: 9:00 AM - 5:00 PM<br>Sábado - Domingo: Cerrado</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo *</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Asunto *</label>
+                        <input type="text" id="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensaje *</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; background: var(--primary-color); color: white;">Enviar Mensaje</button>
+                </form>
+            </div>
+
+            <div class="info-box" style="margin-top: 3rem;">
+                <h3>¿Necesitas Oración?</h3>
+                <p>Nuestro equipo de oración está disponible para orar contigo.</p>
+                <button class="btn btn-secondary" onclick="alert('Formulario de oración próximamente')">Solicitar Oración</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Iglesia Restauración Jireh</h4>
+                    <p>Una comunidad de fe dedicada a compartir el amor de Cristo con nuestra comunidad hispana.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <a onclick="showPage('home')">Inicio</a>
+                    <a onclick="showPage('visit')">Visita</a>
+                    <a onclick="showPage('ministries')">Ministerios</a>
+                    <a onclick="showPage('events')">Eventos</a>
+                    <a onclick="showPage('contact')">Contacto</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Horarios de Servicio</h4>
+                    <p>Domingos: 6:00 PM</p>
+                    <p style="margin-top: 0.5rem;">Sábados: 7:00 PM</p>
+                    <p>Viernes: 7:30 PM</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>8000 Anderson Square #301<br>Austin, TX 78757</p>
+                    <p style="margin-top: 0.5rem;">(512) 709-4853</p>
+                    <p>info@restauracionjireh.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Iglesia Restauración Jireh. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

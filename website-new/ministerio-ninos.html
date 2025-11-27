@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministerio de Niños - Iglesia Restauración Jireh</title>
+    <meta name="description" content="Ministerio de Niños - Enseñando a los pequeños sobre el amor de Jesús">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-church">RESTAURACIÓN JIREH</span>
+                <span class="logo-subtitle">IGLESIA</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#visit">Visita</a></li>
+                <li><a href="index.html#ministries" class="active">Ministerios</a></li>
+                <li><a href="index.html#events">Eventos</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo"><span class="logo-church">RESTAURACIÓN JIREH</span><span class="logo-subtitle">IGLESIA</span></div>
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">×</button>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#visit">Visita</a></li>
+            <li><a href="index.html#ministries">Ministerios</a></li>
+            <li><a href="index.html#events">Eventos</a></li>
+            <li><a href="index.html#contact">Contacto</a></li>
+        </ul>
+    </div>
+
+    <section class="hero-detail" style="background: linear-gradient(135deg, #10b981, #059669);">
+        <div class="hero-detail-content">
+            <h1>Ministerio de Niños</h1>
+            <p>Enseñando a los pequeños sobre el amor de Jesús</p>
+        </div>
+    </section>
+
+    <div class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="index.html">Inicio</a><span>›</span>
+            <a href="index.html#ministries">Ministerios</a><span>›</span>
+            <span>Niños</span>
+        </div>
+    </div>
+
+    <div class="detail-content">
+        <a href="index.html#ministries" class="back-button">← Volver a Ministerios</a>
+
+        <section class="content-section">
+            <h2>Nuestra Visión</h2>
+            <p>El Ministerio de Niños existe para enseñar a los pequeños sobre el amor de Jesús a través de lecciones bíblicas interactivas y divertidas. Creemos que los niños son una parte vital de nuestra iglesia y merecen experiencias de aprendizaje de alta calidad.</p>
+            <p>Nuestro equipo de voluntarios capacitados crea un ambiente seguro, divertido y lleno de amor donde cada niño puede conocer a Jesús y crecer en su fe.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Lo Que Ofrecemos</h2>
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon" style="background: linear-gradient(135deg, #10b981, #059669);"></div>
+                    <h3>Nursery (0-2 años)</h3>
+                    <p>Cuidado amoroso y seguro para los más pequeños durante los servicios</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon" style="background: linear-gradient(135deg, #10b981, #059669);"></div>
+                    <h3>Preescolar (3-5 años)</h3>
+                    <p>Lecciones bíblicas con canciones, manualidades y juegos</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon" style="background: linear-gradient(135deg, #10b981, #059669);"></div>
+                    <h3>Primaria (6-11 años)</h3>
+                    <p>Estudios bíblicos interactivos con aplicaciones prácticas para la vida</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon" style="background: linear-gradient(135deg, #10b981, #059669);"></div>
+                    <h3>Eventos Especiales</h3>
+                    <p>VBS, campamentos, y eventos festivos durante el año</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="schedule-box">
+            <h3>Horarios</h3>
+            <div class="schedule-item">
+                <div class="schedule-item-title">Clases de Domingo</div>
+                <div class="schedule-item-time">Domingos | Durante el servicio</div>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-item-title">Ensayo de Coro Infantil</div>
+                <div class="schedule-item-time">Sábados | 5:00 PM</div>
+            </div>
+        </div>
+
+        <div class="cta-section" style="background: linear-gradient(135deg, #10b981, #059669);">
+            <h2>¿Quieres Servir con los Niños?</h2>
+            <p>Necesitamos voluntarios apasionados para enseñar y cuidar a la próxima generación.</p>
+            <div class="cta-buttons">
+                <a href="index.html#contact" class="btn btn-white">Contáctanos</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section"><h4>Iglesia Restauración Jireh</h4><p>Una comunidad de fe dedicada a compartir el amor de Cristo.</p></div>
+                <div class="footer-section"><h4>Enlaces Rápidos</h4><a href="index.html">Inicio</a><a href="index.html#ministries">Ministerios</a><a href="index.html#contact">Contacto</a></div>
+                <div class="footer-section"><h4>Contacto</h4><p>8000 Anderson Square #301<br>Austin, TX 78757</p><p>(512) 709-4853</p></div>
+            </div>
+            <div class="copyright"><p>&copy; 2025 Iglesia Restauración Jireh.</p></div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

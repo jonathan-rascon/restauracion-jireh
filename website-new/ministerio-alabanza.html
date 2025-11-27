@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministerio de Alabanza - Iglesia Restauración Jireh</title>
+    <meta name="description" content="Ministerio de Alabanza - Guiando a la congregación en adoración">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-church">RESTAURACIÓN JIREH</span>
+                <span class="logo-subtitle">IGLESIA</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#visit">Visita</a></li>
+                <li><a href="index.html#ministries" class="active">Ministerios</a></li>
+                <li><a href="index.html#events">Eventos</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Backdrop -->
+    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" onclick="toggleMobileMenu()"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <span class="logo-church">RESTAURACIÓN JIREH</span>
+                <span class="logo-subtitle">IGLESIA</span>
+            </div>
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">×</button>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#visit">Visita</a></li>
+            <li><a href="index.html#ministries">Ministerios</a></li>
+            <li><a href="index.html#events">Eventos</a></li>
+            <li><a href="index.html#contact">Contacto</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-detail" style="background: linear-gradient(135deg, #ec4899, #be185d);">
+        <div class="hero-detail-content">
+            <h1>Ministerio de Alabanza</h1>
+            <p>Guiando a la congregación en adoración auténtica y apasionada</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html#ministries">Ministerios</a>
+            <span>›</span>
+            <span>Alabanza</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="detail-content">
+        <a href="index.html#ministries" class="back-button">← Volver a Ministerios</a>
+
+        <section class="content-section">
+            <h2>Nuestra Visión</h2>
+            <p>El Ministerio de Alabanza existe para guiar a la congregación en adoración auténtica y apasionada a Dios. Creemos que la adoración es más que música; es un estilo de vida que honra a Dios en todo momento.</p>
+            <p>Nuestro objetivo es crear un ambiente donde la presencia de Dios sea evidente, donde cada persona pueda conectar con Él de manera personal y significativa a través de la adoración musical.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Lo Que Ofrecemos</h2>
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon" style="background: linear-gradient(135deg, #ec4899, #be185d);"></div>
+                    <h3>Entrenamiento Vocal</h3>
+                    <p>Desarrollo de habilidades vocales para cantantes de todos los niveles</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon" style="background: linear-gradient(135deg, #ec4899, #be185d);"></div>
+                    <h3>Equipos Musicales</h3>
+                    <p>Oportunidades para tocar instrumentos en los servicios de adoración</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon" style="background: linear-gradient(135deg, #ec4899, #be185d);"></div>
+                    <h3>Excelencia Técnica</h3>
+                    <p>Capacitación en sonido, iluminación y producción de audio</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon" style="background: linear-gradient(135deg, #ec4899, #be185d);"></div>
+                    <h3>Líderes de Adoración</h3>
+                    <p>Formación espiritual y práctica para líderes de adoración</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Nuestras Actividades</h2>
+            <h3>Actividades Semanales</h3>
+            <ul>
+                <li>Ensayos semanales del equipo de adoración</li>
+                <li>Servicio en los cultos de domingo y entre semana</li>
+                <li>Práctica individual y en grupos pequeños</li>
+                <li>Desarrollo de nuevas canciones y arreglos</li>
+                <li>Mentoría musical y espiritual</li>
+            </ul>
+
+            <h3>Eventos Especiales</h3>
+            <ul>
+                <li>Noches de adoración extendida</li>
+                <li>Talleres de música y técnica</li>
+                <li>Conferencias de adoración</li>
+                <li>Grabaciones especiales</li>
+                <li>Eventos comunitarios de alabanza</li>
+            </ul>
+        </section>
+
+        <div class="schedule-box">
+            <h3>Horario de Ensayos</h3>
+            <div class="schedule-item">
+                <div class="schedule-item-title">Ensayo General</div>
+                <div class="schedule-item-time">Jueves | 7:00 PM</div>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-item-title">Soundcheck Domingo</div>
+                <div class="schedule-item-time">Domingo | 4:00 PM</div>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-item-title">Noche de Adoración</div>
+                <div class="schedule-item-time">Último Viernes | 8:00 PM</div>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-item-title">Taller de Música</div>
+                <div class="schedule-item-time">Segundo Sábado | 10:00 AM</div>
+            </div>
+        </div>
+
+        <section class="content-section">
+            <h2>Conoce a Nuestro Equipo</h2>
+            <div class="leaders-grid">
+                <div class="leader-card">
+                    <div class="leader-photo" style="background: linear-gradient(135deg, #ec4899, #be185d);">🎵</div>
+                    <div class="leader-info">
+                        <h4>[Nombre de Líder]</h4>
+                        <p>Director de Alabanza. Lidera el equipo con pasión y excelencia, creando experiencias de adoración transformadoras.</p>
+                    </div>
+                </div>
+
+                <div class="leader-card">
+                    <div class="leader-photo" style="background: linear-gradient(135deg, #ec4899, #be185d);"></div>
+                    <div class="leader-info">
+                        <h4>[Nombre de Líder]</h4>
+                        <p>Coordinador de Músicos. Organiza ensayos y desarrolla nuevos talentos musicales en la congregación.</p>
+                    </div>
+                </div>
+
+                <div class="leader-card">
+                    <div class="leader-photo" style="background: linear-gradient(135deg, #ec4899, #be185d);"></div>
+                    <div class="leader-info">
+                        <h4>[Nombre de Líder]</h4>
+                        <p>Técnico de Audio. Asegura la excelencia técnica en cada servicio y capacita al equipo técnico.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-section" style="background: linear-gradient(135deg, #ec4899, #be185d);">
+            <h2>¿Tienes Talento Musical?</h2>
+            <p>Únete a nuestro equipo de alabanza y usa tus dones para glorificar a Dios y bendecir a otros.</p>
+            <div class="cta-buttons">
+                <a href="index.html#contact" class="btn btn-white">Contáctanos</a>
+                <a href="index.html#events" class="btn btn-outline">Próximas Noches de Adoración</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Iglesia Restauración Jireh</h4>
+                    <p>Una comunidad de fe dedicada a compartir el amor de Cristo con nuestra comunidad hispana.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#visit">Planea tu Visita</a>
+                    <a href="index.html#ministries">Ministerios</a>
+                    <a href="index.html#events">Eventos</a>
+                    <a href="index.html#contact">Contacto</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Horarios de Servicio</h4>
+                    <p>Domingos: 6:00 PM</p>
+                    <p style="margin-top: 0.5rem;">Sábados: 7:00 PM</p>
+                    <p>Viernes: 7:30 PM</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>8000 Anderson Square #301<br>Austin, TX 78757</p>
+                    <p style="margin-top: 0.5rem;">(512) 709-4853</p>
+                    <p>info@restauracionjireh.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Iglesia Restauración Jireh. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

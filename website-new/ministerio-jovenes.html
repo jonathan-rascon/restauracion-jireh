@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministerio de Jóvenes - Iglesia Restauración Jireh</title>
+    <meta name="description" content="Ministerio de Jóvenes - Un espacio vibrante para jóvenes">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-church">RESTAURACIÓN JIREH</span>
+                <span class="logo-subtitle">IGLESIA</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#visit">Visita</a></li>
+                <li><a href="index.html#ministries" class="active">Ministerios</a></li>
+                <li><a href="index.html#events">Eventos</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Backdrop -->
+    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" onclick="toggleMobileMenu()"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <span class="logo-church">RESTAURACIÓN JIREH</span>
+                <span class="logo-subtitle">IGLESIA</span>
+            </div>
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">×</button>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#visit">Visita</a></li>
+            <li><a href="index.html#ministries">Ministerios</a></li>
+            <li><a href="index.html#events">Eventos</a></li>
+            <li><a href="index.html#contact">Contacto</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-detail" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">
+        <div class="hero-detail-content">
+            <h1>Ministerio de Jóvenes</h1>
+            <p>Un espacio vibrante donde los jóvenes pueden crecer en su fe</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html#ministries">Ministerios</a>
+            <span>›</span>
+            <span>Jóvenes</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="detail-content">
+        <a href="index.html#ministries" class="back-button">← Volver a Ministerios</a>
+
+        <!-- Vision Section -->
+        <section class="content-section">
+            <h2>Nuestra Visión</h2>
+            <p>El Ministerio de Jóvenes existe para crear un espacio donde los adolescentes y jóvenes adultos puedan experimentar a Dios de manera auténtica, formar amistades significativas y descubrir su propósito en Cristo.</p>
+            <p>Creemos que esta generación tiene el potencial de impactar al mundo para Cristo. Nuestro enfoque es equipar a los jóvenes con una fe sólida, herramientas prácticas para la vida y oportunidades para servir y liderar.</p>
+        </section>
+
+        <!-- What We Offer -->
+        <section class="content-section">
+            <h2>Lo Que Ofrecemos</h2>
+            <div class="info-cards">
+                <div class="info-card" style="--card-gradient: linear-gradient(135deg, #8b5cf6, #6d28d9);">
+                    <div class="info-card-icon" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);"></div>
+                    <h3>Adoración Moderna</h3>
+                    <p>Música contemporánea y adoración vibrante que conecta con los jóvenes de hoy</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);"></div>
+                    <h3>Enseñanza Relevante</h3>
+                    <p>Mensajes bíblicos aplicados a los desafíos reales que enfrentan los jóvenes</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);"></div>
+                    <h3>Comunidad</h3>
+                    <p>Un ambiente seguro donde formar amistades duraderas y apoyo mutuo</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);"></div>
+                    <h3>Liderazgo</h3>
+                    <p>Oportunidades para desarrollar habilidades de liderazgo y servicio</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activities -->
+        <section class="content-section">
+            <h2>Nuestras Actividades</h2>
+            <h3>Actividades Semanales</h3>
+            <ul>
+                <li>Viernes de Jóvenes con adoración, enseñanza y juegos</li>
+                <li>Grupos pequeños durante la semana</li>
+                <li>Noches de adoración especiales</li>
+                <li>Estudios bíblicos interactivos</li>
+                <li>Equipos de servicio y ministerio</li>
+            </ul>
+
+            <h3>Eventos Especiales</h3>
+            <ul>
+                <li>Conferencias de jóvenes</li>
+                <li>Retiros de fin de semana</li>
+                <li>Campamentos de verano</li>
+                <li>Viajes misioneros</li>
+                <li>Actividades recreativas y deportivas</li>
+                <li>Noches de cine y pizza</li>
+            </ul>
+        </section>
+
+        <!-- Schedule -->
+        <div class="schedule-box">
+            <h3>Calendario de Actividades</h3>
+            <div class="schedule-item">
+                <div class="schedule-item-title">Viernes de Jóvenes</div>
+                <div class="schedule-item-time">Cada Viernes | 7:30 PM</div>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-item-title">Grupos Pequeños</div>
+                <div class="schedule-item-time">Martes & Jueves | 7:00 PM</div>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-item-title">Noche de Adoración</div>
+                <div class="schedule-item-time">Último Viernes del Mes | 8:00 PM</div>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-item-title">Servicio de Domingo</div>
+                <div class="schedule-item-time">Domingos | 6:00 PM</div>
+            </div>
+        </div>
+
+        <!-- Leaders -->
+        <section class="content-section">
+            <h2>Conoce a Nuestros Líderes</h2>
+            <div class="leaders-grid">
+                <div class="leader-card">
+                    <div class="leader-photo" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);"></div>
+                    <div class="leader-info">
+                        <h4>[Nombre de Líder]</h4>
+                        <p>Pastor de Jóvenes. Apasionado por ver a la próxima generación crecer en su fe y descubrir su propósito en Cristo.</p>
+                    </div>
+                </div>
+
+                <div class="leader-card">
+                    <div class="leader-photo" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);"></div>
+                    <div class="leader-info">
+                        <h4>[Nombre de Líder]</h4>
+                        <p>Líder de Adoración. Guía al equipo de música y crea experiencias de adoración auténticas para los jóvenes.</p>
+                    </div>
+                </div>
+
+                <div class="leader-card">
+                    <div class="leader-photo" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);"></div>
+                    <div class="leader-info">
+                        <h4>[Nombre de Líder]</h4>
+                        <p>Coordinador de Grupos Pequeños. Facilita grupos de discipulado y mentoreo durante la semana.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="cta-section" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">
+            <h2>¿Listo para Unirte?</h2>
+            <p>Ven y descubre una comunidad donde puedes ser tú mismo, crecer en tu fe y hacer amigos increíbles.</p>
+            <div class="cta-buttons">
+                <a href="index.html#contact" class="btn btn-white">Contáctanos</a>
+                <a href="index.html#events" class="btn btn-outline">Ver Próximos Eventos</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Iglesia Restauración Jireh</h4>
+                    <p>Una comunidad de fe dedicada a compartir el amor de Cristo con nuestra comunidad hispana.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#visit">Planea tu Visita</a>
+                    <a href="index.html#ministries">Ministerios</a>
+                    <a href="index.html#events">Eventos</a>
+                    <a href="index.html#contact">Contacto</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Horarios de Servicio</h4>
+                    <p>Domingos: 6:00 PM</p>
+                    <p style="margin-top: 0.5rem;">Sábados: 7:00 PM</p>
+                    <p>Viernes: 7:30 PM</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>8000 Anderson Square #301<br>Austin, TX 78757</p>
+                    <p style="margin-top: 0.5rem;">(512) 709-4853</p>
+                    <p>info@restauracionjireh.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Iglesia Restauración Jireh. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

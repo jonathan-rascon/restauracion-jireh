@@ -1,0 +1,356 @@
+/* ===========================================
+   Enhanced Animations & Effects
+   Inspired by: Animista, CSS Gradient, Cubic-bezier
+   =========================================== */
+
+/* ===== BUTTON HOVER EFFECTS ===== */
+.btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Ripple effect on buttons */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ===== CARD HOVER ANIMATIONS ===== */
+.ministry-card,
+.event-card,
+.info-card,
+.leader-card {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                box-shadow 0.4s ease;
+}
+
+.ministry-card:hover,
+.event-card:hover,
+.info-card:hover,
+.leader-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* ===== GRADIENT ANIMATIONS ===== */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero-detail,
+.cta-section,
+.info-box {
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+}
+
+/* ===== MINISTRY ICON PULSE ===== */
+.ministry-icon {
+    transition: transform 0.3s ease;
+}
+
+.ministry-card:hover .ministry-icon {
+    animation: iconPulse 0.6s ease;
+}
+
+@keyframes iconPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* ===== INFO CARD ICON BOUNCE ===== */
+.info-card-icon {
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.info-card:hover .info-card-icon {
+    transform: translateY(-8px);
+}
+
+/* ===== TEXT REVEAL ANIMATION ===== */
+@keyframes textReveal {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.hero-detail h1,
+.hero h1 {
+    animation: textReveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+/* ===== STAGGERED FADE IN ===== */
+.info-cards .info-card,
+.leaders-grid .leader-card,
+.cards-grid > * {
+    opacity: 0;
+    animation: staggerFadeIn 0.6s ease forwards;
+}
+
+@keyframes staggerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info-cards .info-card:nth-child(1) { animation-delay: 0.1s; }
+.info-cards .info-card:nth-child(2) { animation-delay: 0.2s; }
+.info-cards .info-card:nth-child(3) { animation-delay: 0.3s; }
+.info-cards .info-card:nth-child(4) { animation-delay: 0.4s; }
+
+.leaders-grid .leader-card:nth-child(1) { animation-delay: 0.15s; }
+.leaders-grid .leader-card:nth-child(2) { animation-delay: 0.25s; }
+.leaders-grid .leader-card:nth-child(3) { animation-delay: 0.35s; }
+
+/* ===== SCROLL-TRIGGERED ANIMATIONS ===== */
+.content-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.content-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== MOBILE MENU ANIMATION ===== */
+.mobile-menu {
+    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.mobile-menu-links a {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, padding-left 0.3s ease;
+}
+
+.mobile-menu.active .mobile-menu-links a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mobile-menu.active .mobile-menu-links li:nth-child(1) a { transition-delay: 0.1s; }
+.mobile-menu.active .mobile-menu-links li:nth-child(2) a { transition-delay: 0.15s; }
+.mobile-menu.active .mobile-menu-links li:nth-child(3) a { transition-delay: 0.2s; }
+.mobile-menu.active .mobile-menu-links li:nth-child(4) a { transition-delay: 0.25s; }
+.mobile-menu.active .mobile-menu-links li:nth-child(5) a { transition-delay: 0.3s; }
+
+/* ===== HAMBURGER ANIMATION ===== */
+.mobile-menu-btn span {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ===== NAV LINK UNDERLINE ANIMATION ===== */
+.nav-links a::after {
+    transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ===== SCHEDULE ITEM HOVER ===== */
+.schedule-item {
+    transition: background 0.3s ease, padding-left 0.3s ease;
+    padding-left: 0;
+    border-radius: 8px;
+}
+
+.schedule-item:hover {
+    background: rgba(37, 99, 235, 0.05);
+    padding-left: 1rem;
+}
+
+/* ===== BREADCRUMB ANIMATION ===== */
+.breadcrumb-container a {
+    position: relative;
+}
+
+.breadcrumb-container a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.breadcrumb-container a:hover::after {
+    width: 100%;
+}
+
+/* ===== FOOTER LINK ANIMATION ===== */
+.footer-section a {
+    position: relative;
+    display: inline-block;
+}
+
+.footer-section a::before {
+    content: '→';
+    position: absolute;
+    left: -15px;
+    opacity: 0;
+    transition: left 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-section a:hover::before {
+    left: -20px;
+    opacity: 1;
+}
+
+.footer-section a:hover {
+    padding-left: 5px;
+}
+
+/* ===== FORM INPUT FOCUS ANIMATION ===== */
+.form-group input,
+.form-group textarea {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    transform: translateY(-2px);
+}
+
+/* ===== LOADING SHIMMER EFFECT ===== */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.loading-shimmer {
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 25%,
+        #e0e0e0 50%,
+        #f0f0f0 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* ===== SCROLL INDICATOR ===== */
+@keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollBounce 2s infinite;
+    cursor: pointer;
+}
+
+/* ===== GRADIENT TEXT (for special headings) ===== */
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===== GLASSMORPHISM EFFECT ===== */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ===== EVENT CARD RIBBON ===== */
+.event-card-large::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.event-card-large:hover::before {
+    transform: scaleX(1);
+}
+
+/* ===== SMOOTH PAGE TRANSITIONS ===== */
+.page {
+    animation: pageEnter 0.5s ease;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== REDUCED MOTION SUPPORT ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
